@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://v0rr0aivke1n"]
 
-[ext_resource type="Script" uid="uid://dobj7fg0bkhnr" path="res://scenes/levels/Player_Controller.gd" id="1_13q81"]
+[ext_resource type="Script" uid="uid://dobj7fg0bkhnr" path="res://scripts/Player_Controller.gd" id="1_13q81"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5anhs"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
