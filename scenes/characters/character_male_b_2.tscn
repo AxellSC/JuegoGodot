@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://df8vy0k7qvunf"]
+
+[ext_resource type="PackedScene" uid="uid://dc0ow4xs0of67" path="res://assets/3d/character/character-male-b.glb" id="1_m4866"]
+
+[node name="character-male-b2" unique_id=589931105 instance=ExtResource("1_m4866")]
+
+[node name="Skeleton3D" parent="character-male-b" parent_id_path=PackedInt32Array(1144969435) index="0" unique_id=650086381]
+bones/4/rotation = Quaternion(0, 0, -0.3826835, 0.92387956)
+bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=859019402]
+autoplay = &"idle"
