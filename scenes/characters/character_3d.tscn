@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cuwgd0sn3cddc"]
+
+[ext_resource type="Script" uid="uid://bd50vgwkxx6in" path="res://scenes/characters/character_3d.gd" id="1_ce57v"]
+[ext_resource type="PackedScene" uid="uid://df8vy0k7qvunf" path="res://scenes/characters/character_male_b_2.tscn" id="2_ce57v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5u5i"]
+radius = 0.24707031
+height = 0.7955322
+
+[node name="Character3D" type="CharacterBody3D" unique_id=919686785]
+script = ExtResource("1_ce57v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1744896175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34124756, 0)
+shape = SubResource("CapsuleShape3D_f5u5i")
+
+[node name="camera_mount" type="Node3D" parent="." unique_id=1613553573]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camera_mount" unique_id=1261742762]
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="camera_mount/SpringArm3D" unique_id=1005987983]
+
+[node name="character-male-b2" parent="." unique_id=589931105 instance=ExtResource("2_ce57v")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

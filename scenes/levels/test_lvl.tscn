@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dw0j8w55v6gas"]
+
+[ext_resource type="PackedScene" uid="uid://cuwgd0sn3cddc" path="res://scenes/characters/character_3d.tscn" id="1_wugy7"]
+[ext_resource type="PackedScene" uid="uid://cj3y2goq2ivyg" path="res://assets/3d/modelos de prueba/platform.tscn" id="2_pbtxe"]
+[ext_resource type="Texture2D" uid="uid://bru0ll1co7uj0" path="res://resources/sky_textures/sky_23_2k.png" id="3_4pg3t"]
+[ext_resource type="PackedScene" uid="uid://d00j78ftipi7s" path="res://assets/3d/modelos de prueba/arbol_test.tscn" id="4_s0x45"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b5l1p"]
+panorama = ExtResource("3_4pg3t")
+
+[sub_resource type="Sky" id="Sky_avdc3"]
+sky_material = SubResource("PanoramaSkyMaterial_b5l1p")
+
+[sub_resource type="Environment" id="Environment_36o1k"]
+background_mode = 2
+sky = SubResource("Sky_avdc3")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+tonemap_exposure = 1.25
+ssr_enabled = true
+
+[node name="TestLvl" type="Node3D" unique_id=1621458406]
+
+[node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("1_wugy7")]
+
+[node name="Platform" parent="." unique_id=868075276 instance=ExtResource("2_pbtxe")]
+transform = Transform3D(6.1190615, 0, 0, 0, 1, 0, 0, 0, 3.6740546, -0.009081006, 0.1588738, 0.3929839)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2999567]
+environment = SubResource("Environment_36o1k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1112499136]
+transform = Transform3D(1, 0, 0, 0, 0.34667897, 0.9379839, 0, -0.9379839, 0.34667897, 0, 0, 0)
+
+[node name="ArbolTest" parent="." unique_id=985330101 instance=ExtResource("4_s0x45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.3698716)
+
+[node name="ArbolTest2" parent="." unique_id=230141473 instance=ExtResource("4_s0x45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2846532, 0.4595948, 3.926754)
+
+[node name="ArbolTest3" parent="." unique_id=134097433 instance=ExtResource("4_s0x45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.096433, 0.4595948, 0.77264583)
