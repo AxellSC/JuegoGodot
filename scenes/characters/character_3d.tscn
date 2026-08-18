@@ -14,11 +14,12 @@ script = ExtResource("1_ce57v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34124756, 0)
 shape = SubResource("CapsuleShape3D_f5u5i")
 
-[node name="CameraPivot" type="Node3D" parent="." unique_id=1613553573]
-transform = Transform3D(-1, 0, 8.940697e-08, -1.5882874e-08, 0.98409426, -0.17764693, -8.798489e-08, -0.17764693, -0.98409426, 0, 0.40527534, 0)
+[node name="camera_mount" type="Node3D" parent="." unique_id=1613553573]
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1005987983]
-transform = Transform3D(-1, 5.3290705e-15, -8.7422734e-08, 5.745404e-15, 1, 0, 8.7422734e-08, 0, -1, -0.17635159, 0.16844985, -2.025565)
+[node name="SpringArm3D" type="SpringArm3D" parent="camera_mount" unique_id=1261742762]
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="camera_mount/SpringArm3D" unique_id=1005987983]
 
 [node name="character-male-b2" parent="." unique_id=589931105 instance=ExtResource("2_ce57v")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
