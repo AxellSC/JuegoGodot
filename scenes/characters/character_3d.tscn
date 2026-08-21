@@ -23,9 +23,3 @@ spring_length = 3.0
 
 [node name="character-male-b2" parent="." unique_id=589931105 instance=ExtResource("2_ce57v")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="CoyoteTimer" type="Timer" parent="." unique_id=1264028829]
-unique_name_in_owner = true
-wait_time = 0.2
-
-[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

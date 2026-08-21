@@ -1,71 +1,58 @@
 extends CharacterBody3D
 
-# Variables de referencia
+#Variables de referencia
 @onready var camera_3d: Camera3D = $camera_mount/SpringArm3D/Camera3D
 @onready var spring_arm: SpringArm3D = $camera_mount/SpringArm3D
 @onready var character_male_b_2: Node3D = $"character-male-b2"
 @onready var camera_mount: Node3D = $camera_mount
 @onready var animation_player: AnimationPlayer = $"character-male-b2/AnimationPlayer"
 
-# Camara
+#Camara
 @export var sens_horizontal = 0.2
 @export var sens_vertical = 0.15
 var MaxHorizontalA = -30.0
 var MaxHorizontalB = -10.0
 var velocidad_giro = 10.0
 
-# Variables de accion
+
+#Variables de accion
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
-# Variables de mecánicas de salto
-var coyote_time_active := false
-const JUMP_BUFFER_TIME := 0.15
-var jump_buffer_timer := 0.0
-
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #Ocultar el puntero
 	camera_mount.set_as_top_level(true)
 
 
 func _input(event):
+	#Mover la camara respecto al mouse
 	if event is InputEventMouseMotion:
+# Rotamos la cámara
 		camera_mount.rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
 		spring_arm.rotate_x(deg_to_rad(-event.relative.y * sens_vertical))
+		# Limitar el ángulo vertical
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(MaxHorizontalA), deg_to_rad(MaxHorizontalB))
 
 
 func _physics_process(delta: float) -> void:
-	camera_mount.global_position = global_position	
 	
-	var was_on_floor = is_on_floor()
-
+	#Camara sigue al jugador
+	camera_mount.global_position = global_position	
+	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# 1. Registrar el input en el Jump Buffer
-	if Input.is_action_just_pressed("ui_accept"):
-		jump_buffer_timer = JUMP_BUFFER_TIME
-		
-	# 2. Reducir el tiempo del buffer en cada frame
-	if jump_buffer_timer > 0.0:
-		jump_buffer_timer -= delta
-
-	if jump_buffer_timer > 0.0 and (is_on_floor() or coyote_time_active):
+	# Handle jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		if animation_player: animation_player.play("jump")
 		velocity.y = JUMP_VELOCITY
-
-		jump_buffer_timer = 0.0 
-		coyote_time_active = false 
-		%CoyoteTimer.stop()
-
-	# Movimiento
 	var input_dir := Input.get_vector("left", "right", "up", "down")
+
 	var direction := (camera_mount.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction:
-		if animation_player and is_on_floor(): animation_player.play("sprint")
+		if animation_player: animation_player.play("sprint")
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		
@@ -73,17 +60,8 @@ func _physics_process(delta: float) -> void:
 		rotacion_objetivo += PI
 		rotation.y = lerp_angle(rotation.y, rotacion_objetivo, velocidad_giro * delta)
 	else:
-		if animation_player and is_on_floor(): animation_player.play("idle")
+		if animation_player: animation_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-
-	var just_left_ledge = was_on_floor and not is_on_floor() and velocity.y <= 0
-	if just_left_ledge:
-		coyote_time_active = true
-		%CoyoteTimer.start()
-
-
-func _on_coyote_timer_timeout() -> void:
-	coyote_time_active = false

@@ -34,10 +34,10 @@ environment = SubResource("Environment_36o1k")
 transform = Transform3D(1, 0, 0, 0, 0.34667897, 0.9379839, 0, -0.9379839, 0.34667897, 0, 0, 0)
 
 [node name="ArbolTest" parent="." unique_id=985330101 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.2634041, 1.2756193, 5.7565374)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.3698716)
 
 [node name="ArbolTest2" parent="." unique_id=230141473 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -1.2846532, 0.24788874, 2.372473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2846532, 0.4595948, 3.926754)
 
 [node name="ArbolTest3" parent="." unique_id=134097433 instance=ExtResource("4_s0x45")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.096433, 0.4595948, 0.77264583)
