@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://lh22dnknhdkf"]
+
+[ext_resource type="Script" uid="uid://gndi4mt3egdp" path="res://scripts/world/item_pickup.gd" id="1_ofb8q"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bn2sh"]
+radius = 0.3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnuuk"]
+radius = 0.05
+height = 0.1
+
+[node name="ItemPickup" type="Area3D" unique_id=2146145943]
+script = ExtResource("1_ofb8q")
+item_id = &"glowing_root"
+amount = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1767963339]
+shape = SubResource("SphereShape3D_bn2sh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1877042133]
+mesh = SubResource("CapsuleMesh_rnuuk")

@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var character_male_b_2: Node3D = $"character-male-b2"
 @onready var camera_mount: Node3D = $camera_mount
 @onready var animation_player: AnimationPlayer = $"character-male-b2/AnimationPlayer"
+@onready var inventory: Inventory = $Inventory
 
 #Camara
 @export var sens_horizontal = 0.2
@@ -23,7 +24,7 @@ const JUMP_VELOCITY = 4.5
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #Ocultar el puntero
 	camera_mount.set_as_top_level(true)
-
+	add_to_group("player") #So ItemPickup can detect a player
 
 func _input(event):
 	#Mover la camara respecto al mouse
@@ -33,6 +34,18 @@ func _input(event):
 		spring_arm.rotate_x(deg_to_rad(-event.relative.y * sens_vertical))
 		# Limitar el ángulo vertical
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(MaxHorizontalA), deg_to_rad(MaxHorizontalB))
+		
+	if event.is_action_pressed("drop"):
+		_drop_first_item()
+
+func _drop_first_item() -> void:
+	for i in inventory.slots.size():
+		if not inventory.slots[i].is_empty():
+			var front_position := global_position + (-global_transform.basis.z) * 1.2
+			front_position.y += 0.5
+			inventory.drop_item(i, 1, front_position)
+			return
+			
 
 
 func _physics_process(delta: float) -> void:

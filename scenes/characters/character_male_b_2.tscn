@@ -4,9 +4,9 @@
 
 [node name="character-male-b2" unique_id=589931105 instance=ExtResource("1_m4866")]
 
-[node name="Skeleton3D" parent="character-male-b" parent_id_path=PackedInt32Array(1144969435) index="0" unique_id=650086381]
+[node name="Skeleton3D" parent="character-male-b" parent_id_path=PackedInt32Array(1425323009) index="0" unique_id=1428149071]
 bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
 bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=859019402]
+[node name="AnimationPlayer" parent="." index="1" unique_id=326726642]
 autoplay = &"idle"
