@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemIngredient" format=3 uid="uid://bgavjq4ch0dpr"]
+
+[ext_resource type="Script" uid="uid://xp2e762at2d5" path="res://scripts/items/item_ingredient.gd" id="1_rav4j"]
+
+[resource]
+script = ExtResource("1_rav4j")
+ingredient_type = "root"
+id = &"glowing_root"
+item_name = "Glowing Root"
+description = "A root that glows faintly in the dark. Wizards use it as a light catalyst."
+max_amount_per_slot = 5
+category = "ingredient"
+metadata/_custom_type_script = "uid://xp2e762at2d5"

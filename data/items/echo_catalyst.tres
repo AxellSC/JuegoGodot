@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemCatalyst" format=3 uid="uid://7bout61saxh1"]
+
+[ext_resource type="Script" uid="uid://bmtx8ord3pgvn" path="res://scripts/items/item_catalyst.gd" id="1_l4t5d"]
+
+[resource]
+script = ExtResource("1_l4t5d")
+effect = "Duplicates the effect of the next spell cast."
+id = &"echo_catalyst"
+item_name = "Echo Catalyst"
+description = "m"
+metadata/_custom_type_script = "uid://bmtx8ord3pgvn"
