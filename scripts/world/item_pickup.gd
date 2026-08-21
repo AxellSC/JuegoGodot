@@ -19,7 +19,7 @@ func setup(item: Item, new_amount: int) -> void:
 func _update_visual() -> void:
 	if item_id == &"" or mesh_instance == null:
 		return
-	var item := ItemDatabase.get_item(item_id)
+	var item: Item = ItemDatabase.get_item(item_id)
 	if item == null:
 		return
 	if item.generic_mesh:
@@ -29,7 +29,7 @@ func _on_body_entered(body: Node3D) -> void:
 	if not body.is_in_group("player"):
 		return
 
-	var item := ItemDatabase.get_item(item_id)
+	var item: Item = ItemDatabase.get_item(item_id)
 	if item == null:
 		return
 
