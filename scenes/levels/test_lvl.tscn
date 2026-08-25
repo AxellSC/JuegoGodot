@@ -26,7 +26,7 @@ ssr_enabled = true
 [node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("1_wugy7")]
 
 [node name="Platform" parent="." unique_id=868075276 instance=ExtResource("2_pbtxe")]
-transform = Transform3D(6.1190615, 0, 0, 0, 1, 0, 0, 0, 3.6740546, -0.009081006, 0.1588738, 0.3929839)
+transform = Transform3D(1.4575365, 0, 0, 0, 1, 0, 0, 0, 6.0548596, -0.009081006, 0.1588738, 0.3929839)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2999567]
 environment = SubResource("Environment_36o1k")
@@ -41,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.369871
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2846532, 0.4595948, 3.926754)
 
 [node name="ArbolTest3" parent="." unique_id=134097433 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.096433, 0.4595948, 0.77264583)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6228938, 0.4595948, -6.012084)
 
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2477088)

@@ -10,9 +10,9 @@ extends CharacterBody3D
 
 #Camara
 @export var sens_horizontal = 0.2
-@export var sens_vertical = 0.15
-var MaxHorizontalA = -30.0
-var MaxHorizontalB = -10.0
+@export var sens_vertical = 0.01
+var MaxHorizontalA = -20.0
+var MaxHorizontalB = 5.0
 var velocidad_giro = 10.0
 
 
@@ -30,9 +30,9 @@ func _input(event):
 	#Mover la camara respecto al mouse
 	if event is InputEventMouseMotion:
 # Rotamos la cámara
-		camera_mount.rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
+		#camera_mount.rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
 		spring_arm.rotate_x(deg_to_rad(-event.relative.y * sens_vertical))
-		# Limitar el ángulo vertical
+		#Limitar el ángulo vertical
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(MaxHorizontalA), deg_to_rad(MaxHorizontalB))
 		
 	if event.is_action_pressed("drop"):
