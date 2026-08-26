@@ -38,10 +38,10 @@ transform = Transform3D(1, 0, 0, 0, 0.34667897, 0.9379839, 0, -0.9379839, 0.3466
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.3698716)
 
 [node name="ArbolTest2" parent="." unique_id=230141473 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2846532, 0.4595948, 3.926754)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.64907384, 1.1628647, -4.748966)
 
 [node name="ArbolTest3" parent="." unique_id=134097433 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6228938, 0.4595948, -6.012084)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.6228938, 0.40461117, -1.2878451)
 
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2477088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.1820278)

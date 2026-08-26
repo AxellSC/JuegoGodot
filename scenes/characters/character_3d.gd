@@ -7,6 +7,8 @@ extends CharacterBody3D
 @onready var camera_mount: Node3D = $camera_mount
 @onready var animation_player: AnimationPlayer = $"character-male-b2/AnimationPlayer"
 @onready var inventory: Inventory = $Inventory
+@onready var coyote_timer: Timer = $coyoteTimer
+
 
 #Camara
 @export var sens_horizontal = 0.2
@@ -19,12 +21,15 @@ var velocidad_giro = 10.0
 #Variables de accion
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var was_on_floor: bool = false
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #Ocultar el puntero
 	camera_mount.set_as_top_level(true)
 	add_to_group("player") #So ItemPickup can detect a player
+	prints("Juego iniciado")
+	
 
 func _input(event):
 	#Mover la camara respecto al mouse
@@ -49,28 +54,36 @@ func _drop_first_item() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
-	#Camara sigue al jugador
-	camera_mount.global_position = global_position	
-	# Add the gravity.
+	camera_mount.global_position = global_position
+
+	# Gravedad
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	# Detectar si acabamos de dejar el suelo
+	var just_left_ledge: bool = was_on_floor and not is_on_floor() and velocity.y <= 0.0
+	if just_left_ledge:
+		coyote_timer.start()
+		print("Cayendo, coyote activado")
+
+	was_on_floor = is_on_floor()
+	var can_coyote_jump: bool = not coyote_timer.is_stopped()
+
+	# Salto (normal o coyote)
+	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or can_coyote_jump):
 		if animation_player: animation_player.play("jump")
 		velocity.y = JUMP_VELOCITY
-	var input_dir := Input.get_vector("left", "right", "up", "down")
+		coyote_timer.stop()
+		print("Salto (normal o coyote)")
 
+	# Movimiento horizontal (sin cambios)
+	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (camera_mount.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
 	if direction:
 		if animation_player: animation_player.play("sprint")
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		
-		var rotacion_objetivo = atan2(velocity.x, velocity.z)
-		rotacion_objetivo += PI
+		var rotacion_objetivo = atan2(velocity.x, velocity.z) + PI
 		rotation.y = lerp_angle(rotation.y, rotacion_objetivo, velocidad_giro * delta)
 	else:
 		if animation_player: animation_player.play("idle")

@@ -28,3 +28,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="Inventory" type="Node" parent="." unique_id=2027048704]
 script = ExtResource("3_tl8u2")
+
+[node name="coyoteTimer" type="Timer" parent="." unique_id=2111946545]
+wait_time = 0.3
+one_shot = true
