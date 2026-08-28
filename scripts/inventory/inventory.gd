@@ -15,6 +15,17 @@ var slots: Array[InventorySlot] = []
 func _ready() -> void:
 	for i in MAX_SLOTS:
 		slots.append(InventorySlot.new())
+	inventory_updated.connect(print_inventory)
+
+func print_inventory() -> void: 
+	print("---- INVENTORY ----")
+	for i in slots.size():
+		var slot:= slots[i]
+		if slot.is_empty():
+			print("Slot %d: (empty)" % i)
+		else:
+			print("Slot %d: %s x%d  [id: %s]" % [i, slot.item.item_name, slot.amount, slot.item.id])
+	print("-------------------")	
 		
 func add_item(item: Item, amount: int = 1) -> int:
 	if item == null or amount <= 0:
