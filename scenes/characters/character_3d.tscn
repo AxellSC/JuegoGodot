@@ -32,3 +32,7 @@ script = ExtResource("3_tl8u2")
 [node name="coyoteTimer" type="Timer" parent="." unique_id=2111946545]
 wait_time = 0.3
 one_shot = true
+
+[node name="jumpBufferTimer" type="Timer" parent="." unique_id=1062388117]
+wait_time = 0.1
+one_shot = true

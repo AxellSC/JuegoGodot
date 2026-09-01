@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-#Variables de referencia
+# Variables de referencia
 @onready var camera_3d: Camera3D = $camera_mount/SpringArm3D/Camera3D
 @onready var spring_arm: SpringArm3D = $camera_mount/SpringArm3D
 @onready var character_male_b_2: Node3D = $"character-male-b2"
@@ -8,36 +8,29 @@ extends CharacterBody3D
 @onready var animation_player: AnimationPlayer = $"character-male-b2/AnimationPlayer"
 @onready var inventory: Inventory = $Inventory
 @onready var coyote_timer: Timer = $coyoteTimer
+@onready var jump_buffer_timer: Timer = $jumpBufferTimer
 
-
-#Camara
+# Cámara
 @export var sens_horizontal = 0.2
 @export var sens_vertical = 0.01
 var MaxHorizontalA = -20.0
 var MaxHorizontalB = 5.0
 var velocidad_giro = 10.0
 
-
-#Variables de accion
+# Variables de acción
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var was_on_floor: bool = false
 
-
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #Ocultar el puntero
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera_mount.set_as_top_level(true)
-	add_to_group("player") #So ItemPickup can detect a player
+	add_to_group("player")
 	prints("Juego iniciado")
-	
 
 func _input(event):
-	#Mover la camara respecto al mouse
 	if event is InputEventMouseMotion:
-# Rotamos la cámara
-		#camera_mount.rotate_y(deg_to_rad(-event.relative.x * sens_horizontal))
 		spring_arm.rotate_x(deg_to_rad(-event.relative.y * sens_vertical))
-		#Limitar el ángulo vertical
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(MaxHorizontalA), deg_to_rad(MaxHorizontalB))
 		
 	if event.is_action_pressed("drop"):
@@ -50,8 +43,15 @@ func _drop_first_item() -> void:
 			front_position.y += 0.5
 			inventory.drop_item(i, 1, front_position)
 			return
-			
 
+func _jump() -> void:
+	"""Ejecuta el salto: animación, velocidad y detiene timers."""
+	if animation_player:
+		animation_player.play("jump")
+	velocity.y = JUMP_VELOCITY
+	coyote_timer.stop()
+	jump_buffer_timer.stop()
+	print("Salto ejecutado")
 
 func _physics_process(delta: float) -> void:
 	camera_mount.global_position = global_position
@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Detectar si acabamos de dejar el suelo
+	# Detectar si acabamos de dejar el suelo (para coyote time)
 	var just_left_ledge: bool = was_on_floor and not is_on_floor() and velocity.y <= 0.0
 	if just_left_ledge:
 		coyote_timer.start()
@@ -69,24 +69,38 @@ func _physics_process(delta: float) -> void:
 	was_on_floor = is_on_floor()
 	var can_coyote_jump: bool = not coyote_timer.is_stopped()
 
-	# Salto (normal o coyote)
-	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or can_coyote_jump):
-		if animation_player: animation_player.play("jump")
-		velocity.y = JUMP_VELOCITY
-		coyote_timer.stop()
-		print("Salto (normal o coyote)")
+	# Variable para controlar si ya saltamos este frame
+	var did_jump = false
 
-	# Movimiento horizontal (sin cambios)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		if is_on_floor() or can_coyote_jump:
+			# Salto inmediato (normal o coyote)
+			_jump()
+			did_jump = true
+		else:
+			# No podemos saltar ahora: activar jump buffer
+			jump_buffer_timer.start()
+			print("Buffer de salto iniciado")
+
+	#Salto por buffer al aterrizar
+	if not did_jump and is_on_floor() and not jump_buffer_timer.is_stopped():
+		_jump()
+		print("Salto por buffer")
+
+	# Movimiento horizontal
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (camera_mount.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		if animation_player: animation_player.play("sprint")
+		if animation_player:
+			animation_player.play("sprint")
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		var rotacion_objetivo = atan2(velocity.x, velocity.z) + PI
 		rotation.y = lerp_angle(rotation.y, rotacion_objetivo, velocidad_giro * delta)
 	else:
-		if animation_player: animation_player.play("idle")
+		if animation_player:
+			animation_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 

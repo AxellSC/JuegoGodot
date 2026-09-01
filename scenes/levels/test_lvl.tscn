@@ -45,7 +45,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.64
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.6228938, 0.40461117, -1.2878451)
 
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.045610547, 4.625408)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.045610547, 3.5063152)
 
 [node name="ItemPickup2" parent="." unique_id=1281077011 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, -0.28337693, 0.37896955, 6.136485)
