@@ -16,12 +16,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34124756, 0)
 shape = SubResource("CapsuleShape3D_f5u5i")
 
 [node name="camera_mount" type="Node3D" parent="." unique_id=1613553573]
-transform = Transform3D(-4.1675232e-08, -0.3016517, 0.9534182, -1.3185614e-08, 0.9534182, 0.3016517, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-4.1675232e-08, -0.3016517, 0.9534182, -1.3185614e-08, 0.9534182, 0.3016517, -1, 0, -4.371139e-08, 2.4628184, 0, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="camera_mount" unique_id=1261742762]
-spring_length = 4.0
-
-[node name="Camera3D" type="Camera3D" parent="camera_mount/SpringArm3D" unique_id=1005987983]
+[node name="Camera3D" type="Camera3D" parent="camera_mount" unique_id=1005987983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8831963e-07, 0.39225692, 4.3082504)
 
 [node name="character-male-b2" parent="." unique_id=589931105 instance=ExtResource("2_ce57v")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

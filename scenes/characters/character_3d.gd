@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
 # Variables de referencia
-@onready var camera_3d: Camera3D = $camera_mount/SpringArm3D/Camera3D
-@onready var spring_arm: SpringArm3D = $camera_mount/SpringArm3D
+@onready var camera_3d: Camera3D = $camera_mount/Camera3D
 @onready var character_male_b_2: Node3D = $"character-male-b2"
 @onready var camera_mount: Node3D = $camera_mount
 @onready var animation_player: AnimationPlayer = $"character-male-b2/AnimationPlayer"
@@ -11,11 +10,16 @@ extends CharacterBody3D
 @onready var jump_buffer_timer: Timer = $jumpBufferTimer
 
 # Cámara
-@export var sens_horizontal = 0.2
-@export var sens_vertical = 0.01
-var MaxHorizontalA = -20.0
-var MaxHorizontalB = 5.0
-var velocidad_giro = 10.0
+@export var sens_vertical = 0.0005       
+@export var min_pitch_deg = -25.0       # Límite inferior de inclinación (mirar abajo)
+@export var max_pitch_deg = -10.0        # Límite superior de inclinación (mirar arriba)
+@export var camera_follow_speed = 3.0   # Velocidad al seguir el jugador
+@export var camera_rotation_speed = 5.0 # Velocidad del suavizado de rotación
+
+# Ángulos actuales y altura
+var current_pitch = 0.0
+var target_pitch = 0.0
+var target_camera_y = 0.0 
 
 # Variables de acción
 const SPEED = 5.0
@@ -26,12 +30,19 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera_mount.set_as_top_level(true)
 	add_to_group("player")
-	prints("Juego iniciado")
+	
+
+	current_pitch = camera_mount.rotation.x
+	target_pitch = current_pitch
+	target_camera_y = global_position.y
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		spring_arm.rotate_x(deg_to_rad(-event.relative.y * sens_vertical))
-		spring_arm.rotation.x = clamp(spring_arm.rotation.x, deg_to_rad(MaxHorizontalA), deg_to_rad(MaxHorizontalB))
+		# Actualizar ángulos objetivo según el movimiento del mouse
+		target_pitch -= event.relative.y * sens_vertical
+		
+		# Limitar los ángulos
+		target_pitch = clamp(target_pitch, deg_to_rad(min_pitch_deg), deg_to_rad(max_pitch_deg))
 		
 	if event.is_action_pressed("drop"):
 		_drop_first_item()
@@ -45,63 +56,72 @@ func _drop_first_item() -> void:
 			return
 
 func _jump() -> void:
-	"""Ejecuta el salto: animación, velocidad y detiene timers."""
 	if animation_player:
 		animation_player.play("jump")
 	velocity.y = JUMP_VELOCITY
 	coyote_timer.stop()
 	jump_buffer_timer.stop()
-	print("Salto ejecutado")
 
 func _physics_process(delta: float) -> void:
-	camera_mount.global_position = global_position
 
-	# Gravedad
+	
+	# Solo actualizamos la altura objetivo si el personaje está tocando el suelo
+	if is_on_floor():
+		target_camera_y = global_position.y
+		
+
+	var target_pos = Vector3(global_position.x, target_camera_y, global_position.z)
+	
+	var follow_factor = 1.0 - exp(-camera_follow_speed * delta)
+	camera_mount.global_position = camera_mount.global_position.lerp(target_pos, follow_factor)
+	
+	var rot_factor = 1.0 - exp(-camera_rotation_speed * delta)
+	current_pitch = lerp(current_pitch, target_pitch, rot_factor)
+	camera_mount.rotation.x = current_pitch
+
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Detectar si acabamos de dejar el suelo (para coyote time)
 	var just_left_ledge: bool = was_on_floor and not is_on_floor() and velocity.y <= 0.0
 	if just_left_ledge:
 		coyote_timer.start()
-		print("Cayendo, coyote activado")
 
 	was_on_floor = is_on_floor()
 	var can_coyote_jump: bool = not coyote_timer.is_stopped()
-
-	# Variable para controlar si ya saltamos este frame
 	var did_jump = false
 
-	
 	if Input.is_action_just_pressed("ui_accept"):
 		if is_on_floor() or can_coyote_jump:
-			# Salto inmediato (normal o coyote)
 			_jump()
 			did_jump = true
 		else:
-			# No podemos saltar ahora: activar jump buffer
 			jump_buffer_timer.start()
-			print("Buffer de salto iniciado")
 
-	#Salto por buffer al aterrizar
 	if not did_jump and is_on_floor() and not jump_buffer_timer.is_stopped():
 		_jump()
-		print("Salto por buffer")
+		did_jump = true
 
-	# Movimiento horizontal
+	
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (camera_mount.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
-		if animation_player:
-			animation_player.play("sprint")
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		var rotacion_objetivo = atan2(velocity.x, velocity.z) + PI
-		rotation.y = lerp_angle(rotation.y, rotacion_objetivo, velocidad_giro * delta)
+		rotation.y = lerp_angle(rotation.y, rotacion_objetivo, 10.0 * delta)
+
+		if is_on_floor() and not did_jump:
+			if animation_player:
+				animation_player.play("sprint")
 	else:
-		if animation_player:
-			animation_player.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+		# Proteger la animación de salto comprobando que estemos en el suelo
+		if is_on_floor() and not did_jump:
+			if animation_player:
+				animation_player.play("idle")
 
 	move_and_slide()
