@@ -6,7 +6,7 @@
 radius = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo2fk"]
-albedo_color = Color(0.15763211, 0.52712315, 0.7944344, 1)
+albedo_color = Color(0.68665683, 0.29576004, 0.82325315, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_rnuuk"]
 material = SubResource("StandardMaterial3D_xo2fk")

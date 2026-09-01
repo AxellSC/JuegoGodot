@@ -24,9 +24,10 @@ ssr_enabled = true
 [node name="TestLvl" type="Node3D" unique_id=1621458406]
 
 [node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("1_wugy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35753107, 0.2754432, 0.15940726)
 
 [node name="Platform" parent="." unique_id=868075276 instance=ExtResource("2_pbtxe")]
-transform = Transform3D(1.4575365, 0, 0, 0, 1, 0, 0, 0, 6.0548596, -0.009081006, 0.1588738, 0.3929839)
+transform = Transform3D(1.4575365, 0, 0, 0, 1, 0, 0, 0, 6.0548596, -0.016551137, 0.14875317, 0.40336466)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2999567]
 environment = SubResource("Environment_36o1k")
@@ -44,4 +45,12 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.64
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.6228938, 0.40461117, -1.2878451)
 
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.1820278)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.045610547, 4.625408)
+
+[node name="ItemPickup2" parent="." unique_id=1281077011 instance=ExtResource("5_xo2fk")]
+transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, -0.28337693, 0.37896955, 6.136485)
+item_id = &"ember_feather"
+
+[node name="ItemPickup3" parent="." unique_id=891757011 instance=ExtResource("5_xo2fk")]
+transform = Transform3D(0.99931645, 0.036814928, -0.0033490954, -0.036838174, 0.99929553, -0.007167135, 0.0030828703, 0.007285614, 0.9999687, -1.3369954, 0.31865764, 5.7636995)
+item_id = &"moonlit_mushroom"
