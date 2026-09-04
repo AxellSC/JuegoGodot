@@ -2,8 +2,8 @@
 extends Node3D
 
 # speed of growth & how high does the block jump
-@export var grow_duration: float = 1.5
-@export var grow_height: float = 1.5
+@export var grow_duration: float = 2.0
+@export var grow_height: float = 3
 
 # references to our nodes
 @onready var spell_zone: Area3D = $SpellZone
@@ -13,7 +13,8 @@ extends Node3D
 var has_grown: bool = false
 
 func _ready() -> void: # runs one time
-	plant_cube.scale = Vector3.ZERO # zero initially
+	# plant_cube.scale = Vector3.ZERO # zero initially
+	plant_cube.scale = Vector3(1.0, 0.0, 1.0)
 	# plant_cube.position.y = -grow_height
 	
 	# when in the spell zone, call the _on_body_entered function
@@ -30,10 +31,6 @@ func grow_plant() -> void:
 	var tween = create_tween()
 	tween.set_parallel(true) # run the animations at the same time
 	
-	# from (0,0,0) to (1,1,1)
-	tween.tween_property(plant_cube, "scale", Vector3.ONE, grow_duration) \
-		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
-		
-	# Animate Position: from underground (-grow_height) to ground level (0.0)
-	tween.tween_property(plant_cube, "position:y", 0.0, grow_duration) \
+	# from Vector3(1.0, 0.0, 1.0) to (1,1,1)
+	tween.tween_property(plant_cube, "scale:y", grow_height, grow_duration) \
 		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)

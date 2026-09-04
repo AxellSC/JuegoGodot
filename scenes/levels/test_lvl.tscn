@@ -97,6 +97,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4751573, -0.390625, -6.5882
 shape = SubResource("CylinderShape3D_8vrlf")
 
 [node name="PlantCube" type="MeshInstance3D" parent="PlantaMagica" unique_id=1292065136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5396922, 0.88866305, -6.5303288)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54, -0.2, -6.53)
 mesh = SubResource("BoxMesh_1vivr")
 surface_material_override/0 = SubResource("StandardMaterial3D_8vrlf")
