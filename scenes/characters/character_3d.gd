@@ -29,7 +29,7 @@ var was_on_floor: bool = false
 # variables para escalar
 var is_climbing: bool = false
 var can_climb: bool = false
-var climb_speed: float = 3.0
+var climb_speed: float = 2.5
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
