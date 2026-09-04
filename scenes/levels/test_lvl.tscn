@@ -27,7 +27,7 @@ tonemap_exposure = 1.25
 ssr_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cungd"]
-size = Vector3(1, 0.79937744, 1)
+size = Vector3(1.2, 1, 1.2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1vivr"]
 size = Vector3(1, 2, 1)
@@ -106,6 +106,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -6.5)
 mesh = SubResource("BoxMesh_1vivr")
 surface_material_override/0 = SubResource("StandardMaterial3D_cungd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/PlantPivot" unique_id=1032143536]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlantaMagica/PlantPivot" unique_id=826309599]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/PlantPivot/StaticBody3D" unique_id=1032143536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -6.5)
 shape = SubResource("BoxShape3D_1vivr")
