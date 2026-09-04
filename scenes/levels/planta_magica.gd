@@ -1,20 +1,21 @@
 # position, rotation, scale in 3d space
 extends Node3D
 
-# speed of growth & how high does the block jump
+# speed of growth & height
 @export var grow_duration: float = 2.0
-@export var grow_height: float = 3
+@export var grow_height: float = 0.8
 
 # references to our nodes
 @onready var spell_zone: Area3D = $SpellZone
-@onready var plant_cube: MeshInstance3D = $PlantCube
+# @onready var plant_cube: MeshInstance3D = $PlantCube
+@onready var plant_pivot: Node3D = $PlantPivot 
 
 # has the plant grown already?
 var has_grown: bool = false
 
 func _ready() -> void: # runs one time
-	# plant_cube.scale = Vector3.ZERO # zero initially
-	plant_cube.scale = Vector3(1.0, 0.0, 1.0)
+	# set the pivot to 0 height
+	plant_pivot.scale = Vector3(1.0, 0.0, 1.0)
 	# plant_cube.position.y = -grow_height
 	
 	# when in the spell zone, call the _on_body_entered function
@@ -29,8 +30,7 @@ func grow_plant() -> void:
 	
 	# tween animates movements
 	var tween = create_tween()
-	tween.set_parallel(true) # run the animations at the same time
 	
-	# from Vector3(1.0, 0.0, 1.0) to (1,1,1)
-	tween.tween_property(plant_cube, "scale:y", grow_height, grow_duration) \
+	# animate pivot y
+	tween.tween_property(plant_pivot, "scale:y", grow_height, grow_duration) \
 		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
