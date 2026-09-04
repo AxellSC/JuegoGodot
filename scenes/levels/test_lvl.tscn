@@ -38,6 +38,9 @@ albedo_color = Color(0, 1, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1vivr"]
 size = Vector3(1, 2, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vrlf"]
+size = Vector3(1.1, 2.1, 1.1)
+
 [node name="TestLvl" type="Node3D" unique_id=1621458406]
 
 [node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("1_wugy7")]
@@ -96,18 +99,27 @@ script = ExtResource("10_cungd")
 [node name="SpellZone" type="Area3D" parent="PlantaMagica" unique_id=173866867]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/SpellZone" unique_id=336669603]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -8)
 shape = SubResource("BoxShape3D_cungd")
 
 [node name="PlantPivot" type="Node3D" parent="PlantaMagica" unique_id=711546904]
 
 [node name="PlantCube" type="MeshInstance3D" parent="PlantaMagica/PlantPivot" unique_id=1292065136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -8)
 mesh = SubResource("BoxMesh_1vivr")
 surface_material_override/0 = SubResource("StandardMaterial3D_cungd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PlantaMagica/PlantPivot" unique_id=826309599]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/PlantPivot/StaticBody3D" unique_id=1032143536]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1, -6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -8)
 shape = SubResource("BoxShape3D_1vivr")
+
+[node name="ClimbZone" type="Area3D" parent="PlantaMagica/PlantPivot" unique_id=1710126498]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/PlantPivot/ClimbZone" unique_id=378691513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -8)
+shape = SubResource("BoxShape3D_8vrlf")
+
+[connection signal="body_entered" from="PlantaMagica/PlantPivot/ClimbZone" to="Character3D" method="_on_climb_zone_body_entered"]
+[connection signal="body_exited" from="PlantaMagica/PlantPivot/ClimbZone" to="Character3D" method="_on_climb_zone_body_exited"]

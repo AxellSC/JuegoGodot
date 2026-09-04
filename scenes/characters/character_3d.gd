@@ -26,6 +26,11 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var was_on_floor: bool = false
 
+# variables para escalar
+var is_climbing: bool = false
+var can_climb: bool = false
+var climb_speed: float = 3.0
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera_mount.set_as_top_level(true)
@@ -62,6 +67,15 @@ func _jump() -> void:
 	coyote_timer.stop()
 	jump_buffer_timer.stop()
 
+# functions to detect the climb zone
+func _on_climb_zone_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		can_climb = true
+
+func _on_climb_zone_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		can_climb = false
+
 func _physics_process(delta: float) -> void:
 
 	
@@ -79,6 +93,29 @@ func _physics_process(delta: float) -> void:
 	current_pitch = lerp(current_pitch, target_pitch, rot_factor)
 	camera_mount.rotation.x = current_pitch
 
+	# climbing logic
+	# we can only climb if we are inside the zone & touching the plant wall
+	if can_climb and is_on_wall():
+		if Input.is_action_pressed("up") or Input.is_action_pressed("down"): 
+			is_climbing = true # grab the plant
+	else:
+		is_climbing = false
+	
+	if is_climbing:
+		# turn off gravity
+		velocity.y = 0 
+		# var vertical_input = Input.get_axis("down", "up")
+		
+		# Up and Down now move us vertically
+		if Input.is_action_pressed("up") or Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+			velocity.y = climb_speed
+		elif Input.is_action_pressed("down"):
+			velocity.y = -climb_speed
+
+		# Pressing Jump lets go of the plant and jumps away
+		if Input.is_action_just_pressed("ui_accept"):
+			is_climbing = false
+			_jump()
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
