@@ -31,6 +31,8 @@ size = Vector3(5.845581, 8.353394, 2.7696533)
 [sub_resource type="CylinderMesh" id="CylinderMesh_by08b"]
 height = 34.087036
 
+[sub_resource type="BoxMesh" id="BoxMesh_2qdtu"]
+
 [node name="Node3D" type="Node3D" unique_id=1812938794]
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=196640118]
@@ -88,3 +90,7 @@ mesh = SubResource("CylinderMesh_2qdtu")
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="." unique_id=2006017173]
 transform = Transform3D(-2.9578317e-07, -1, 0, 6.76673, -4.371139e-08, 0, 0, 0, 6.7667303, -8.278312, 3.4816322, -7.970586)
 mesh = SubResource("CylinderMesh_by08b")
+
+[node name="Mago" type="MeshInstance3D" parent="." unique_id=1861951491]
+transform = Transform3D(3.9859862, 0, 0, 0, 4.557985, 0, 0, 0, 3.694128, -32.31049, 2.7590866, -44.164684)
+mesh = SubResource("BoxMesh_2qdtu")
