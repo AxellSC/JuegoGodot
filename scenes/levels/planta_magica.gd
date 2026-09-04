@@ -3,7 +3,7 @@ extends Node3D
 
 # speed of growth & height
 @export var grow_duration: float = 2.0
-@export var grow_height: float = 0.8
+@export var grow_height: float = 3.0
 
 # references to our nodes
 @onready var spell_zone: Area3D = $SpellZone
