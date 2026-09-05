@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ckuebr0ah2prm"]
+
+[ext_resource type="PackedScene" uid="uid://ditpun6ghwkwx" path="res://resources/modelos glb/rock_planeC.glb" id="1_h2y2a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bxcdq"]
+size = Vector3(2.3359375, 1.5628815, 2.150879)
+
+[node name="rock_planeC2" unique_id=1164926904 instance=ExtResource("1_h2y2a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1299897884]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1772940998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27539063, 0.74292755, 0.080322266)
+shape = SubResource("BoxShape3D_bxcdq")

@@ -5,10 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://bru0ll1co7uj0" path="res://resources/sky_textures/sky_23_2k.png" id="3_4pg3t"]
 [ext_resource type="PackedScene" uid="uid://d00j78ftipi7s" path="res://assets/3d/modelos de prueba/arbol_test.tscn" id="4_s0x45"]
 [ext_resource type="PackedScene" uid="uid://lh22dnknhdkf" path="res://scenes/world/item_pickup.tscn" id="5_xo2fk"]
-[ext_resource type="PackedScene" uid="uid://daqgti313v3m4" path="res://assets/3d/enviroment/hongoA.glb" id="6_8ksv1"]
-[ext_resource type="PackedScene" uid="uid://cgsxnu2yoqjig" path="res://assets/3d/enviroment/hongoB.glb" id="7_cungd"]
-[ext_resource type="PackedScene" uid="uid://uv0c1h2l0fsl" path="res://assets/3d/enviroment/hongoD.glb" id="8_g6moc"]
-[ext_resource type="PackedScene" uid="uid://d3lca6eww7m5g" path="res://assets/3d/enviroment/hongoGigante.glb" id="9_1lh5u"]
+[ext_resource type="PackedScene" uid="uid://oyalnxuexcvx" path="res://assets/3d/enviroment/hongo_a_2.tscn" id="6_avdc3"]
+[ext_resource type="PackedScene" uid="uid://d1bp7nhl5cvo" path="res://assets/3d/enviroment/hongo_d_2.tscn" id="7_cungd"]
+[ext_resource type="PackedScene" uid="uid://dyapd1e01ucdi" path="res://assets/3d/enviroment/rock_plane_a_2.tscn" id="8_g6moc"]
+[ext_resource type="PackedScene" uid="uid://cbbje0cgrb2gs" path="res://assets/3d/enviroment/hongo_c.tscn" id="9_1lh5u"]
+[ext_resource type="PackedScene" uid="uid://vrvwhnj1cox4" path="res://assets/3d/enviroment/hongo_b.tscn" id="10_imbk5"]
+[ext_resource type="PackedScene" uid="uid://bqx3o5c5adk6y" path="res://assets/3d/enviroment/hongo_gigante_2.tscn" id="11_g6moc"]
+[ext_resource type="PackedScene" uid="uid://j1mcvaosp0gi" path="res://assets/3d/enviroment/rock_plane_b_2.tscn" id="12_imbk5"]
+[ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="13_y6mh5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b5l1p"]
 panorama = ExtResource("3_4pg3t")
@@ -28,7 +32,7 @@ ssr_enabled = true
 [node name="TestLvl" type="Node3D" unique_id=1621458406]
 
 [node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("1_wugy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35753107, 0.2754432, -10.431783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35753107, 0.07790387, 1.2816966)
 
 [node name="Platform" parent="." unique_id=868075276 instance=ExtResource("2_pbtxe")]
 transform = Transform3D(1.4575365, 0, 0, 0, 1, 0, 0, 0, 6.0548596, -0.016551137, 0.14875317, 0.40336466)
@@ -42,12 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 0.34667897, 0.9379839, 0, -0.9379839, 0.3466
 [node name="ArbolTest" parent="." unique_id=985330101 instance=ExtResource("4_s0x45")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.3698716)
 
-[node name="ArbolTest2" parent="." unique_id=230141473 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.64907384, 1.1628647, -4.748966)
-
-[node name="ArbolTest3" parent="." unique_id=134097433 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.6228938, 0.40461117, -1.2878451)
-
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.045610547, 3.5063152)
 
@@ -59,20 +57,35 @@ item_id = &"ember_feather"
 transform = Transform3D(0.99931645, 0.036814928, -0.0033490954, -0.036838174, 0.99929553, -0.007167135, 0.0030828703, 0.007285614, 0.9999687, -1.3369954, 0.31865764, 5.7636995)
 item_id = &"moonlit_mushroom"
 
-[node name="hongoA2" parent="." unique_id=2029807790 instance=ExtResource("6_8ksv1")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.958744, -1.366071, -1.1529189)
+[node name="hongoA2" parent="." unique_id=145002081 instance=ExtResource("6_avdc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86655617, -0.03910827, -13.16959)
 
-[node name="hongoA3" parent="." unique_id=508375042 instance=ExtResource("6_8ksv1")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -15.385373, -1.4288673, -5.8757825)
+[node name="hongoD2" parent="." unique_id=833000278 instance=ExtResource("7_cungd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5485637, -0.08819634, -13.203684)
 
-[node name="hongoB" parent="." unique_id=84761435 instance=ExtResource("7_cungd")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.8346, -2.3488417, -5.201272)
+[node name="hongoA3" parent="." unique_id=1112829275 instance=ExtResource("6_avdc3")]
+transform = Transform3D(0.08177813, 0, -0.9966506, 0, 1, 0, 0.9966506, 0, 0.08177813, 2.5931976, -0.26901108, -10.741708)
 
-[node name="hongoD2" parent="." unique_id=2030632703 instance=ExtResource("8_g6moc")]
-transform = Transform3D(-0.087324165, 0, 0.49231544, 0, 0.5, 0, -0.49231544, 0, -0.087324165, -7.128669, -1.5461369, -13.546928)
+[node name="hongoD3" parent="." unique_id=1605941415 instance=ExtResource("7_cungd")]
+transform = Transform3D(0.08177813, 0, -0.9966506, 0, 1, 0, 0.9966506, 0, 0.08177813, 2.5714037, -0.31809914, -11.424219)
 
-[node name="hongoD3" parent="." unique_id=928714427 instance=ExtResource("8_g6moc")]
-transform = Transform3D(-0.087324165, 0, 0.49231544, 0, 0.5, 0, -0.49231544, 0, -0.087324165, -15.536689, -1.4522197, -3.8380828)
+[node name="rock_planeA2" parent="." unique_id=460933434 instance=ExtResource("8_g6moc")]
+transform = Transform3D(-0.06491208, 0, 0.5964784, 0, 0.6, 0, -0.5964784, 0, -0.06491208, 0.1253438, -0.023964286, -3.2746992)
 
-[node name="hongoGigante2" parent="." unique_id=1200327564 instance=ExtResource("9_1lh5u")]
-transform = Transform3D(-0.4597958, 0, -0.19643791, 0, 0.5, 0, 0.19643791, 0, -0.4597958, -9.834907, -2.8582706, -23.592144)
+[node name="rock_planeA3" parent="." unique_id=24127356 instance=ExtResource("8_g6moc")]
+transform = Transform3D(-0.1081868, 0, 0.9941306, 0, 1, 0, -0.9941306, 0, -0.1081868, 0.1253438, -0.023964286, -8.228916)
+
+[node name="hongoC" parent="." unique_id=132800755 instance=ExtResource("9_1lh5u")]
+transform = Transform3D(0.004978235, 0, 0.9999876, 0, 1, 0, -0.9999876, 0, 0.004978235, 1.3166659, -0.06558943, -13.358898)
+
+[node name="hongoB" parent="." unique_id=1511879286 instance=ExtResource("10_imbk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4139371, -0.08928316, -13.59313)
+
+[node name="hongoGigante2" parent="." unique_id=816862497 instance=ExtResource("11_g6moc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7819948, -0.092549324, -11.066339)
+
+[node name="rock_planeB2" parent="." unique_id=420025001 instance=ExtResource("12_imbk5")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, -4, 0, -6)
+
+[node name="rock_planeC2" parent="." unique_id=1164926904 instance=ExtResource("13_y6mh5")]
+transform = Transform3D(-1.7320508, 0, 1.0000001, 0, 2, 0, -1.0000001, 0, -1.7320508, -4.4651136, 0, -2.6033754)
