@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bqx3o5c5adk6y"]
+
+[ext_resource type="PackedScene" uid="uid://bjrk5pdxl47gi" path="res://resources/modelos glb/hongoGigante.glb" id="1_0ewik"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqc0o"]
+size = Vector3(2.2456055, 2.7542725, 2.2703247)
+
+[node name="hongoGigante2" unique_id=816862497 instance=ExtResource("1_0ewik")]
+
+[node name="hongoGigante" parent="." index="0" unique_id=217055520]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1293668353]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=680309554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036743164, 1.4012451, 0.009429932)
+shape = SubResource("BoxShape3D_uqc0o")

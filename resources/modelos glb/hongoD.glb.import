@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8pvdfnms4rkr"
-path="res://.godot/imported/hongoC.glb-756c436fed634233da8ac2ccfd2cceae.scn"
+uid="uid://c3tamrqcqprhb"
+path="res://.godot/imported/hongoD.glb-e18c4d00fe871691f737fb115728440b.scn"
 
 [deps]
 
-source_file="res://assets/3d/enviroment/hongoC.glb"
-dest_files=["res://.godot/imported/hongoC.glb-756c436fed634233da8ac2ccfd2cceae.scn"]
+source_file="res://resources/modelos glb/hongoD.glb"
+dest_files=["res://.godot/imported/hongoD.glb-e18c4d00fe871691f737fb115728440b.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://daqgti313v3m4"
-path="res://.godot/imported/hongoA.glb-efbe074ed604521283bdb6b4fd306c14.scn"
+uid="uid://ditpun6ghwkwx"
+path="res://.godot/imported/rock_planeC.glb-1c73a746b96a3b92ae0c0bb88ef802c6.scn"
 
 [deps]
 
-source_file="res://assets/3d/enviroment/hongoA.glb"
-dest_files=["res://.godot/imported/hongoA.glb-efbe074ed604521283bdb6b4fd306c14.scn"]
+source_file="res://resources/modelos glb/rock_planeC.glb"
+dest_files=["res://.godot/imported/rock_planeC.glb-1c73a746b96a3b92ae0c0bb88ef802c6.scn"]
 
 [params]
 
