@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskData" format=3 uid="uid://4eqggqejlsq4"]
+
+[ext_resource type="Script" uid="uid://hlfwotrki761" path="res://quests/TaskData.gd" id="1_kfs2g"]
+
+[resource]
+script = ExtResource("1_kfs2g")
+description = "Busca: "
+target_name = "glowing_root"
+required_amount = 3
+metadata/_custom_type_script = "uid://hlfwotrki761"

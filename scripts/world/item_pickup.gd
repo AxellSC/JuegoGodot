@@ -58,7 +58,17 @@ func _on_body_entered(body: Node3D) -> void:
 	if inventory == null:
 		return
 
-	var leftover := inventory.add_item(item, amount)
+	var leftover: int = inventory.add_item(item, amount)
+	var collected_amount: int = amount - leftover
+
+	# Notificar a la misión únicamente la cantidad que realmente se guardó
+	if collected_amount > 0:
+		QuestManager.update_task_progress(
+			TaskData.TaskType.COLLECT, 
+			String(item_id), 
+			collected_amount
+		)
+
 	if leftover <= 0:
 		queue_free()
 	else:
