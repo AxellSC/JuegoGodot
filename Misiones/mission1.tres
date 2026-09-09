@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestData" format=3 uid="uid://dl0ful4fdt4sa"]
+
+[ext_resource type="Script" uid="uid://mpeh5jkckn10" path="res://quests/QuestData.gd" id="1_x6b7t"]
+[ext_resource type="Script" uid="uid://hlfwotrki761" path="res://quests/TaskData.gd" id="2_oj5w2"]
+[ext_resource type="Resource" uid="uid://4eqggqejlsq4" path="res://Misiones/task_apples.tres" id="3_oj5w2"]
+[ext_resource type="Resource" uid="uid://cnxol5c8622d6" path="res://Misiones/task_oranges.tres" id="4_tiopo"]
+
+[resource]
+script = ExtResource("1_x6b7t")
+id = "mision_01"
+title = "¡Vamos al bosque!"
+tasks = Array[ExtResource("2_oj5w2")]([ExtResource("3_oj5w2"), ExtResource("4_tiopo")])
+metadata/_custom_type_script = "uid://mpeh5jkckn10"

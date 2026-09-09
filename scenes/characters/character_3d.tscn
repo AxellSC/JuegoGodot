@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bd50vgwkxx6in" path="res://scenes/characters/character_3d.gd" id="1_ce57v"]
 [ext_resource type="PackedScene" uid="uid://df8vy0k7qvunf" path="res://scenes/characters/character_male_b_2.tscn" id="2_ce57v"]
 [ext_resource type="Script" uid="uid://cvd1epo04yu6q" path="res://scripts/inventory/inventory.gd" id="3_tl8u2"]
+[ext_resource type="Script" uid="uid://dk4k3cv2pwxiq" path="res://quests/QuestUI.gd" id="4_vtuf5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5u5i"]
 radius = 0.24707031
@@ -35,3 +36,21 @@ one_shot = true
 [node name="jumpBufferTimer" type="Timer" parent="." unique_id=1062388117]
 wait_time = 0.1
 one_shot = true
+
+[node name="QuestCanvasLayer" type="CanvasLayer" parent="." unique_id=1383802727]
+script = ExtResource("4_vtuf5")
+
+[node name="QuestContainer" type="PanelContainer" parent="QuestCanvasLayer" unique_id=552987516]
+offset_right = 147.0
+offset_bottom = 99.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestCanvasLayer/QuestContainer" unique_id=887272406]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="QuestCanvasLayer/QuestContainer/VBoxContainer" unique_id=2052035432]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TaskListContainer" type="VBoxContainer" parent="QuestCanvasLayer/QuestContainer/VBoxContainer" unique_id=1842411433]
+layout_mode = 2

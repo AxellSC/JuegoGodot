@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskData" format=3 uid="uid://cnxol5c8622d6"]
+
+[ext_resource type="Script" uid="uid://hlfwotrki761" path="res://quests/TaskData.gd" id="1_cnivh"]
+
+[resource]
+script = ExtResource("1_cnivh")
+description = "Encuentra:"
+target_name = "ember_feather"
+required_amount = 6
+metadata/_custom_type_script = "uid://hlfwotrki761"

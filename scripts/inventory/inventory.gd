@@ -140,6 +140,12 @@ func drop_item(slot_index: int, amount: int, position: Vector3) -> void:
 	var item := slot.item
 	var dropped := remove_item(slot_index, amount)
 	if dropped > 0:
+		# Notificar al sistema de misiones que el ítem salió del inventario
+		QuestManager.remove_task_progress(
+			TaskData.TaskType.COLLECT,
+			String(item.id),
+			dropped
+		)
 		_spawn_item_in_world(item, dropped, position)
 	
 
