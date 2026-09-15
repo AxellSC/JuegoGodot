@@ -1,5 +1,13 @@
 [gd_scene format=3 uid="uid://dxqksyyoj8mlh"]
 
+[ext_resource type="PackedScene" uid="uid://mjknw0m3vu6d" path="res://assets/3d/enviroment/Tree.glb" id="1_nfxgb"]
+[ext_resource type="PackedScene" uid="uid://dh6vtkkycbi4a" path="res://assets/3d/enviroment/TreeA.glb" id="2_6j557"]
+[ext_resource type="PackedScene" uid="uid://daqgti313v3m4" path="res://assets/3d/enviroment/hongoA.glb" id="3_vqcyc"]
+[ext_resource type="PackedScene" uid="uid://cgsxnu2yoqjig" path="res://assets/3d/enviroment/hongoB.glb" id="4_lc71m"]
+[ext_resource type="PackedScene" uid="uid://c8pvdfnms4rkr" path="res://assets/3d/enviroment/hongoC.glb" id="5_bukqj"]
+[ext_resource type="PackedScene" uid="uid://d3lca6eww7m5g" path="res://assets/3d/enviroment/hongoGigante.glb" id="6_hxq8y"]
+[ext_resource type="PackedScene" uid="uid://uv0c1h2l0fsl" path="res://assets/3d/enviroment/hongoD.glb" id="7_myvff"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_6j557"]
 size = Vector3(1.857727, 0.9982605, 12.409363)
 
@@ -28,9 +36,6 @@ size = Vector3(5.845581, 8.353394, 2.7696533)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2qdtu"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_by08b"]
-height = 34.087036
-
 [sub_resource type="BoxMesh" id="BoxMesh_2qdtu"]
 
 [node name="Node3D" type="Node3D" unique_id=1812938794]
@@ -45,14 +50,6 @@ mesh = SubResource("BoxMesh_imcy2")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=312443272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30633, 2.122734, 23.175575)
-mesh = SubResource("CylinderMesh_e7d36")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1899175149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.262921, 1.9652185, 28.730604)
-mesh = SubResource("CylinderMesh_e7d36")
-
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=259893626]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.262921, 1.9652185, 28.730604)
 mesh = SubResource("CylinderMesh_e7d36")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1420908586]
@@ -87,10 +84,28 @@ mesh = SubResource("CylinderMesh_2qdtu")
 transform = Transform3D(-33.428688, 0, 0, 0, 1, 0, 0, 0, -33.428688, -8.19245, 0, -8.371581)
 mesh = SubResource("CylinderMesh_2qdtu")
 
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="." unique_id=2006017173]
-transform = Transform3D(-2.9578317e-07, -1, 0, 6.76673, -4.371139e-08, 0, 0, 0, 6.7667303, -8.278312, 3.4816322, -7.970586)
-mesh = SubResource("CylinderMesh_by08b")
-
 [node name="Mago" type="MeshInstance3D" parent="." unique_id=1861951491]
 transform = Transform3D(3.9859862, 0, 0, 0, 4.557985, 0, 0, 0, 3.694128, -32.31049, 2.7590866, -44.164684)
 mesh = SubResource("BoxMesh_2qdtu")
+
+[node name="Tree" parent="." unique_id=284384092 instance=ExtResource("1_nfxgb")]
+transform = Transform3D(3.195, 0, 0, 0, 3.195, 0, 0, 0, 3.195, -8.217613, 4.0984116, -8.047646)
+
+[node name="TreeA" parent="." unique_id=325784103 instance=ExtResource("2_6j557")]
+transform = Transform3D(0.7, 0, 0, 0, 0.6970993, 0.06365955, 0, -0.06365955, 0.6970993, -15.955452, -0.44018912, 31.10175)
+visible = false
+
+[node name="hongoA2" parent="." unique_id=1802044447 instance=ExtResource("3_vqcyc")]
+transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, -10.983047, -9.536743e-07, -14.896119)
+
+[node name="hongoB" parent="." unique_id=118619442 instance=ExtResource("4_lc71m")]
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, -11.8452835, 0, -17.194635)
+
+[node name="hongoC" parent="." unique_id=840003109 instance=ExtResource("5_bukqj")]
+transform = Transform3D(0.014541072, 0, 0.2846288, 0, 0.285, 0, -0.2846288, 0, 0.014541072, 2.1228743, 0.90601087, -19.358257)
+
+[node name="hongoGigante2" parent="." unique_id=1130483459 instance=ExtResource("6_hxq8y")]
+transform = Transform3D(-0.079101354, 0, 0.72067183, 0, 0.72499996, 0, -0.72067183, 0, -0.079101354, -8.198468, -1.6186037, -28.717873)
+
+[node name="hongoD2" parent="." unique_id=1805603867 instance=ExtResource("7_myvff")]
+transform = Transform3D(0.04152492, 0, 0.8139414, 0, 0.815, 0, -0.8139414, 0, 0.04152492, -10.891702, 0, -20.391033)
