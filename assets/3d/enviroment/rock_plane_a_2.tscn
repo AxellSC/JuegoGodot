@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://pkb8i1pb0cu5" path="res://resources/modelos glb/rock_planeA.glb" id="1_24ky7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vloub"]
-size = Vector3(2.0759277, 1.3080444, 1.6722412)
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2y2a"]
+size = Vector3(2.071991, 1.3031616, 1.6373291)
 
 [node name="rock_planeA2" unique_id=460933434 instance=ExtResource("1_24ky7")]
 
@@ -11,6 +11,6 @@ size = Vector3(2.0759277, 1.3080444, 1.6722412)
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1042366087]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06542969, 0.625824, -0.062561035)
-shape = SubResource("BoxShape3D_vloub")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=984502421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055602074, 0.5904846, -0.08905029)
+shape = SubResource("BoxShape3D_h2y2a")
