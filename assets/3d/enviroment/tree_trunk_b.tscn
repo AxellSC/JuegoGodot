@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cmjrxojc8q2ci"]
+
+[ext_resource type="PackedScene" uid="uid://cm63xyhrmsf63" path="res://resources/modelos glb/TreeTrunkB.glb" id="1_216tp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ebd52"]
+size = Vector3(1.8912354, 3.479126, 2.005371)
+
+[node name="TreeTrunkB" unique_id=1372038994 instance=ExtResource("1_216tp")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1136005023]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=17093509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.042175293, 1.7904402, -0.0056152344)
+shape = SubResource("BoxShape3D_ebd52")
