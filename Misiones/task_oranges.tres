@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_cnivh")
-description = "Encuentra:"
+description = "Encuentra las Ember Feather"
 target_name = "ember_feather"
-required_amount = 6
+required_amount = 2
 metadata/_custom_type_script = "uid://hlfwotrki761"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mpeh5jkckn10" path="res://quests/QuestData.gd" id="1_x6b7t"]
 [ext_resource type="Script" uid="uid://hlfwotrki761" path="res://quests/TaskData.gd" id="2_oj5w2"]
-[ext_resource type="Resource" uid="uid://4eqggqejlsq4" path="res://Misiones/task_apples.tres" id="3_oj5w2"]
+[ext_resource type="Resource" uid="uid://4eqggqejlsq4" path="res://Misiones/task_root.tres" id="3_oj5w2"]
 [ext_resource type="Resource" uid="uid://cnxol5c8622d6" path="res://Misiones/task_oranges.tres" id="4_tiopo"]
 
 [resource]
