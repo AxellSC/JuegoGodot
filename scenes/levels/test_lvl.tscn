@@ -5,12 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bru0ll1co7uj0" path="res://resources/sky_textures/sky_23_2k.png" id="3_4pg3t"]
 [ext_resource type="PackedScene" uid="uid://d00j78ftipi7s" path="res://assets/3d/modelos de prueba/arbol_test.tscn" id="4_s0x45"]
 [ext_resource type="PackedScene" uid="uid://lh22dnknhdkf" path="res://scenes/world/item_pickup.tscn" id="5_xo2fk"]
-[ext_resource type="PackedScene" uid="uid://dyapd1e01ucdi" path="res://assets/3d/enviroment/rock_plane_a_2.tscn" id="8_g6moc"]
-[ext_resource type="PackedScene" uid="uid://bu5ltwrf7wqbb" path="res://scenes/characters/NPC_mission_test.tscn" id="10_cungd"]
-[ext_resource type="PackedScene" uid="uid://vfjtmp2m33e5" path="res://scenes/locations/Zona.tscn" id="11_g6moc"]
-[ext_resource type="PackedScene" uid="uid://j1mcvaosp0gi" path="res://assets/3d/enviroment/rock_plane_b_2.tscn" id="12_imbk5"]
-[ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="13_y6mh5"]
-[ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="16_cxga4"]
+[ext_resource type="PackedScene" uid="uid://daqgti313v3m4" path="res://assets/3d/enviroment/hongoA.glb" id="6_8ksv1"]
+[ext_resource type="PackedScene" uid="uid://cgsxnu2yoqjig" path="res://assets/3d/enviroment/hongoB.glb" id="7_cungd"]
+[ext_resource type="PackedScene" uid="uid://uv0c1h2l0fsl" path="res://assets/3d/enviroment/hongoD.glb" id="8_g6moc"]
+[ext_resource type="PackedScene" uid="uid://d3lca6eww7m5g" path="res://assets/3d/enviroment/hongoGigante.glb" id="9_1lh5u"]
+[ext_resource type="Script" uid="uid://yktlxdyag43j" path="res://scenes/levels/planta_magica.gd" id="10_cungd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b5l1p"]
 panorama = ExtResource("3_4pg3t")
@@ -26,6 +25,21 @@ ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
 tonemap_exposure = 1.25
 ssr_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cungd"]
+size = Vector3(1.2, 1, 1.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1vivr"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cungd"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vivr"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vrlf"]
+size = Vector3(1.1, 2.1, 1.1)
 
 [node name="TestLvl" type="Node3D" unique_id=1621458406]
 
@@ -92,6 +106,36 @@ amount = 1
 [node name="QuestGiverArea" parent="." unique_id=248033050 instance=ExtResource("10_cungd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9006956, 0.87865424, 0.67608213)
 
-[node name="Zona" parent="." unique_id=739245093 instance=ExtResource("11_g6moc")]
-transform = Transform3D(2.2011476, 0, 0, 0, 1, 0, 0, 0, 1.9661014, 1.1578419, 1.184256, -11.730282)
-zone_id = "Hongos"
+[node name="hongoGigante2" parent="." unique_id=1200327564 instance=ExtResource("9_1lh5u")]
+transform = Transform3D(-0.4597958, 0, -0.19643791, 0, 0.5, 0, 0.19643791, 0, -0.4597958, -9.834907, -2.8582706, -23.592144)
+
+[node name="PlantaMagica" type="Node3D" parent="." unique_id=909000314]
+script = ExtResource("10_cungd")
+
+[node name="SpellZone" type="Area3D" parent="PlantaMagica" unique_id=173866867]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/SpellZone" unique_id=336669603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -8)
+shape = SubResource("BoxShape3D_cungd")
+
+[node name="PlantPivot" type="Node3D" parent="PlantaMagica" unique_id=711546904]
+
+[node name="PlantCube" type="MeshInstance3D" parent="PlantaMagica/PlantPivot" unique_id=1292065136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -8)
+mesh = SubResource("BoxMesh_1vivr")
+surface_material_override/0 = SubResource("StandardMaterial3D_cungd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlantaMagica/PlantPivot" unique_id=826309599]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/PlantPivot/StaticBody3D" unique_id=1032143536]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -8)
+shape = SubResource("BoxShape3D_1vivr")
+
+[node name="ClimbZone" type="Area3D" parent="PlantaMagica/PlantPivot" unique_id=1710126498]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantaMagica/PlantPivot/ClimbZone" unique_id=378691513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -8)
+shape = SubResource("BoxShape3D_8vrlf")
+
+[connection signal="body_entered" from="PlantaMagica/PlantPivot/ClimbZone" to="Character3D" method="_on_climb_zone_body_entered"]
+[connection signal="body_exited" from="PlantaMagica/PlantPivot/ClimbZone" to="Character3D" method="_on_climb_zone_body_exited"]
