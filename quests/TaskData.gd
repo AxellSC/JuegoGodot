@@ -5,8 +5,8 @@ enum TaskType { COLLECT, LOCATION, ELIMINATE }
 
 @export var id: String = ""
 @export var type: TaskType = TaskType.COLLECT
-@export var description: String = ""
-@export var target_name: String = "" # Nombre del ítem, zona o enemigo
+@export_multiline var description: String = ""
+@export var target_name: String = "" # Id   del ítem, zona o enemigo
 @export var required_amount: int = 1 # Para ubicación suele ser 1
 var current_amount: int = 0
 var is_completed: bool = false
@@ -14,17 +14,10 @@ var is_completed: bool = false
 func get_formatted_text() -> String:
 	match type:
 		TaskData.TaskType.COLLECT:
-			var display_name: String = target_name
-			# Si existe en la base de datos de ítems, extrae su nombre traducido/visible
-			if ItemDatabase.has_item(StringName(target_name)):
-				var item: Item = ItemDatabase.get_item(StringName(target_name))
-				if "name" in item and not item.name.is_empty():
-					display_name = item.name
-			
-			return "%s %s: %d/%d" % [description, display_name, current_amount, required_amount]
+			return "%s : %d/%d" % [description, current_amount, required_amount]
 
 		TaskData.TaskType.LOCATION:
-			return "Llega hasta la zona de: %s" % [target_name]
+			return "%s" % [description]
 
 		TaskData.TaskType.ELIMINATE:
 			return "%s: %d/%d" % [description, current_amount, required_amount]

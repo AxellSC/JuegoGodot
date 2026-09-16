@@ -28,8 +28,9 @@ func _update_ui(quest: QuestData) -> void:
 	# Crear un label por cada tarea activa
 	for task in quest.tasks:
 		var task_label: Label = Label.new()
-		task_label.text = "- " + task.get_formatted_text()
+		task_label.text = "* " + task.get_formatted_text()
 		if task.is_completed:
+			task_label.text = "✓ " + task.get_formatted_text()
 			task_label.modulate = Color.DARK_GRAY
 		task_list_container.add_child(task_label)
 

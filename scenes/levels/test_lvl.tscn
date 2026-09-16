@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://lh22dnknhdkf" path="res://scenes/world/item_pickup.tscn" id="5_xo2fk"]
 [ext_resource type="PackedScene" uid="uid://dyapd1e01ucdi" path="res://assets/3d/enviroment/rock_plane_a_2.tscn" id="8_g6moc"]
 [ext_resource type="PackedScene" uid="uid://bu5ltwrf7wqbb" path="res://scenes/characters/NPC_mission_test.tscn" id="10_cungd"]
+[ext_resource type="PackedScene" uid="uid://vfjtmp2m33e5" path="res://scenes/locations/Zona.tscn" id="11_g6moc"]
 [ext_resource type="PackedScene" uid="uid://j1mcvaosp0gi" path="res://assets/3d/enviroment/rock_plane_b_2.tscn" id="12_imbk5"]
 [ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="13_y6mh5"]
 [ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="16_cxga4"]
@@ -90,3 +91,7 @@ amount = 1
 
 [node name="QuestGiverArea" parent="." unique_id=248033050 instance=ExtResource("10_cungd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9006956, 0.87865424, 0.67608213)
+
+[node name="Zona" parent="." unique_id=739245093 instance=ExtResource("11_g6moc")]
+transform = Transform3D(2.2011476, 0, 0, 0, 1, 0, 0, 0, 1.9661014, 1.1578419, 1.184256, -11.730282)
+zone_id = "Hongos"

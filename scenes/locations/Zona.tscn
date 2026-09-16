@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://vfjtmp2m33e5"]
+
+[ext_resource type="Script" uid="uid://cac1fm33gonll" path="res://scenes/locations/LocationObjectiveArea.gd" id="1_fmwgt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmwgt"]
+size = Vector3(2, 2, 2)
+
+[node name="Zona" type="Area3D" unique_id=739245093]
+collision_layer = 2
+script = ExtResource("1_fmwgt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1635759209]
+shape = SubResource("BoxShape3D_fmwgt")
+debug_color = Color(7.9669056, 3.00515, 0, 1)

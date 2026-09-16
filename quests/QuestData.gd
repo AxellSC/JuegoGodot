@@ -1,6 +1,7 @@
 class_name QuestData
 extends Resource
 
+#Estados de una Mision
 enum QuestState { NOT_STARTED, IN_PROGRESS, COMPLETED }
 
 @export var id: String = ""
