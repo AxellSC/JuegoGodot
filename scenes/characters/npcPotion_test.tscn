@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c0tr0p0h576je"]
+
+[ext_resource type="Script" uid="uid://muk3kc0kn5vr" path="res://scripts/world/asignarPosion.gd" id="1_o6h8w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gepn"]
+size = Vector3(3.4281158, 1.826294, 4.3029785)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f5u5i"]
+
+[node name="Node3D" type="Node3D" unique_id=800185235]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=327004524]
+collision_layer = 8
+script = ExtResource("1_o6h8w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1627617350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017051697, 0.41314697, 0.77111816)
+shape = SubResource("BoxShape3D_3gepn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1340965391]
+mesh = SubResource("BoxMesh_f5u5i")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=2120034110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8939931, 0)
+text = "Desbloquear posión"
+autowrap_mode = 2
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

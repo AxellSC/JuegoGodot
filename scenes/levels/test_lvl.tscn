@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://vfjtmp2m33e5" path="res://scenes/locations/Zona.tscn" id="11_g6moc"]
 [ext_resource type="PackedScene" uid="uid://bkv8aejmoy8e8" path="res://scenes/levels/luciernaga.tscn" id="12_1lh5u"]
 [ext_resource type="PackedScene" uid="uid://j1mcvaosp0gi" path="res://assets/3d/enviroment/rock_plane_b_2.tscn" id="12_imbk5"]
+[ext_resource type="PackedScene" uid="uid://c0tr0p0h576je" path="res://scenes/characters/npcPotion_test.tscn" id="13_imbk5"]
 [ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="13_y6mh5"]
 [ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="16_cxga4"]
 
@@ -94,7 +95,7 @@ amount = 1
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9006956, 0.87865424, 0.67608213)
 
 [node name="Zona" parent="." unique_id=739245093 instance=ExtResource("11_g6moc")]
-transform = Transform3D(2.2011476, 0, 0, 0, 1, 0, 0, 0, 1.9661014, 1.1578419, 1.184256, -11.730282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1578419, 1.184256, -11.730282)
 zone_id = "Hongos"
 
 [node name="Waypoint1" type="Marker3D" parent="." unique_id=1536346066 groups=["wander_points"]]
@@ -108,3 +109,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.054, 2.5921714)
 
 [node name="luciernaga" parent="." unique_id=764468294 instance=ExtResource("12_1lh5u")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.43035257, 1.1470625, -1.6666169)
+
+[node name="npcPotiontest" parent="." unique_id=800185235 instance=ExtResource("13_imbk5")]
+transform = Transform3D(-0.069083385, 0, 0.99761087, 0, 1, 0, -0.99761087, 0, -0.069083385, -2.826126, 0.5062971, 6.3526254)

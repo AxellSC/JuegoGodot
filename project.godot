@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ItemDatabase="*uid://k5xc11qgtker"
 QuestManager="*uid://cf6hgjxtehino"
+PowersManager="*uid://bf1e4yl6fksav"
 
 [display]
 
