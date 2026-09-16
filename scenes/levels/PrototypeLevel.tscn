@@ -1,24 +1,29 @@
 [gd_scene format=3 uid="uid://dxqksyyoj8mlh"]
 
+[ext_resource type="PackedScene" uid="uid://1rb3ry5yayni" path="res://assets/3d/enviroment/treeA.tscn" id="2_thjlo"]
+[ext_resource type="PackedScene" uid="uid://cdcqe78sgf8p0" path="res://assets/3d/enviroment/tree_trunk_a.tscn" id="3_f7lc6"]
+[ext_resource type="PackedScene" uid="uid://cl5mcwbm7blgn" path="res://assets/3d/enviroment/hongo_interactivo.tscn" id="3_rreqg"]
+[ext_resource type="PackedScene" uid="uid://bqx3o5c5adk6y" path="res://assets/3d/enviroment/hongo_gigante_2.tscn" id="3_thjlo"]
+[ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="4_vqcyc"]
+[ext_resource type="PackedScene" uid="uid://j1mcvaosp0gi" path="res://assets/3d/enviroment/rock_plane_b_2.tscn" id="5_lc71m"]
+[ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="6_bukqj"]
+[ext_resource type="PackedScene" uid="uid://dyapd1e01ucdi" path="res://assets/3d/enviroment/rock_plane_a_2.tscn" id="7_vqcyc"]
+[ext_resource type="PackedScene" uid="uid://cmjrxojc8q2ci" path="res://assets/3d/enviroment/tree_trunk_b.tscn" id="9_bukqj"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_6j557"]
 size = Vector3(1.857727, 0.9982605, 12.409363)
 
 [sub_resource type="BoxMesh" id="BoxMesh_imcy2"]
 size = Vector3(3.335205, 1.7543335, 12.409363)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_e7d36"]
-top_radius = 1.4282227
-bottom_radius = 1.4282227
-height = 5.928711
-
 [sub_resource type="BoxMesh" id="BoxMesh_nfxgb"]
 size = Vector3(3.335205, 1, 12.409363)
 
 [sub_resource type="BoxMesh" id="BoxMesh_thjlo"]
-size = Vector3(1.9073486, 1, 18.294262)
+size = Vector3(1.9073486, 1, 30.065222)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ngqvl"]
-size = Vector3(3.335205, 1, 17.890106)
+size = Vector3(3.335205, 1, 23.04271)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f7lc6"]
 size = Vector3(5.845581, 10.777771, 2.7696533)
@@ -28,63 +33,77 @@ size = Vector3(5.845581, 8.353394, 2.7696533)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_2qdtu"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_by08b"]
-height = 34.087036
+[sub_resource type="BoxMesh" id="BoxMesh_2qdtu"]
 
 [node name="Node3D" type="Node3D" unique_id=1812938794]
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=196640118]
-transform = Transform3D(3.1780179, 0, 0, 0, 1, 0, 0, 0, 1, -1.2868749, -0.0015454292, -58.592472)
+transform = Transform3D(3.1780179, 0, 0, 0, 1, 0, 0, 0, 1, -1.2868749, -0.0015454292, -77.48334)
 mesh = SubResource("BoxMesh_6j557")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1908041064]
-transform = Transform3D(1.7826996, 0, 0, 0, 1, 0, 0, 0, 1, -1.239795, 0.36021495, 11.171138)
+transform = Transform3D(1.7826996, 0, 0, 0, 1, 0, 0, 0, 1, -1.239795, 0.36021495, 3.0841208)
 mesh = SubResource("BoxMesh_imcy2")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=312443272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30633, 2.122734, 23.175575)
-mesh = SubResource("CylinderMesh_e7d36")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1899175149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.262921, 1.9652185, 28.730604)
-mesh = SubResource("CylinderMesh_e7d36")
-
-[node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=259893626]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.262921, 1.9652185, 28.730604)
-mesh = SubResource("CylinderMesh_e7d36")
-
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1420908586]
-transform = Transform3D(3.1780179, 0, 0, 0, 1, 0, 0, 0, 1, -9.523193, 0.021437407, -46.1435)
+transform = Transform3D(3.1780179, 0, 0, 0, 1, 0, 0, 0, 1, -9.523193, 0.021437407, -65.03436)
 mesh = SubResource("BoxMesh_nfxgb")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1074972529]
-transform = Transform3D(1.7826996, 0, 0, 0, 1, 0, 0, 0, 1, -1.2651577, 0.010718703, -46.17273)
+transform = Transform3D(1.7826996, 0, 0, 0, 1, 0, 0, 0, 1, -1.2651577, 0.010718703, -65.06359)
 mesh = SubResource("BoxMesh_nfxgb")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=2017781747]
-transform = Transform3D(3.1780179, 0, 0, 0, 1, 0, 0, 0, 1, -1.2207434, 0.025279045, -30.839464)
+transform = Transform3D(3.1780179, 0, 0, 0, 1, 0, 0, 0, 1, -1.2207434, 0.025279045, -43.767834)
 mesh = SubResource("BoxMesh_thjlo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=37774860]
-transform = Transform3D(1.7826996, 0, 0, 0, 1, 0, 0, 0, 1, -1.2331368, 0, 26.143583)
+transform = Transform3D(1.7826996, 0, 0, 0, 1, 0, 0, 0, 1, -1.2331368, 0, 20.817785)
 mesh = SubResource("BoxMesh_ngqvl")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1604429270]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2911873, 8.856445, -60.027958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2911873, 8.856445, -78.91882)
 mesh = SubResource("BoxMesh_f7lc6")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1840076745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2564087, 3.6766968, -66.19483)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2564087, 3.6766968, -85.08569)
 mesh = SubResource("BoxMesh_e7d36")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=621953104]
-transform = Transform3D(-38.9454, 0, 0, 0, 1, 0, 0, 0, -38.9454, -29.778637, 0, -46.799774)
+transform = Transform3D(-38.9454, 0, 0, 0, 1, 0, 0, 0, -38.9454, -29.778637, 0, -65.690636)
 mesh = SubResource("CylinderMesh_2qdtu")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=506809545]
-transform = Transform3D(-33.428688, 0, 0, 0, 1, 0, 0, 0, -33.428688, -8.19245, 0, -8.371581)
+transform = Transform3D(-33.428688, 0, 0, 0, 1, 0, 0, 0, -33.428688, -8.19245, 0, -15.965728)
 mesh = SubResource("CylinderMesh_2qdtu")
 
-[node name="MeshInstance3D14" type="MeshInstance3D" parent="." unique_id=2006017173]
-transform = Transform3D(-2.9578317e-07, -1, 0, 6.76673, -4.371139e-08, 0, 0, 0, 6.7667303, -8.278312, 3.4816322, -7.970586)
-mesh = SubResource("CylinderMesh_by08b")
+[node name="Mago" type="MeshInstance3D" parent="." unique_id=1861951491]
+transform = Transform3D(3.9859862, 0, 0, 0, 4.557985, 0, 0, 0, 3.694128, -32.31049, 2.7590866, -63.055546)
+mesh = SubResource("BoxMesh_2qdtu")
+
+[node name="TreeA" parent="." unique_id=284384092 instance=ExtResource("2_thjlo")]
+transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -7.1766853, 3.8478842, -10.888945)
+
+[node name="TreeTrunkA" parent="." unique_id=1170508947 instance=ExtResource("3_f7lc6")]
+transform = Transform3D(2.48, 0, 0, 0, 2.48, 0, 0, 0, 2.48, -6.7664046, -1.292067, 26.697706)
+
+[node name="hongoInteractivo" parent="." unique_id=1272626509 instance=ExtResource("3_rreqg")]
+transform = Transform3D(2.63, 0, 0, 0, 2.63, 0, 0, 0, 2.63, -10.317579, 1.0189562, -17.724371)
+
+[node name="hongoInteractivoA" parent="." unique_id=200170276 instance=ExtResource("4_vqcyc")]
+transform = Transform3D(2.63, 0, 0, 0, 2.63, 0, 0, 0, 2.63, -11.151173, 1.0683303, -19.054283)
+
+[node name="rock_planeC2" parent="." unique_id=1164926904 instance=ExtResource("6_bukqj")]
+transform = Transform3D(1.64, 0, 0, 0, 1.64, 0, 0, 0, 1.64, -5.594177, 1.0801153, -6.1714354)
+
+[node name="rock_planeB3" parent="." unique_id=416976480 instance=ExtResource("5_lc71m")]
+transform = Transform3D(1.459866, 0, 0, 0, 0.99999964, 0, 0, 0, 1.6184857, -2.5621357, 0.9070122, -6.2253523)
+
+[node name="rock_planeA2" parent="." unique_id=460933434 instance=ExtResource("7_vqcyc")]
+transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, -10.191951, 1.1712866, -5.9381537)
+
+[node name="hongoGigante2" parent="." unique_id=816862497 instance=ExtResource("3_thjlo")]
+transform = Transform3D(-0.002322562, 0, 4.3699994, 0, 4.37, 0, -4.3699994, 0, -0.002322562, -5.6803226, -0.37731552, -34.463955)
+
+[node name="TreeTrunkB" parent="." unique_id=1372038994 instance=ExtResource("9_bukqj")]
+transform = Transform3D(2.045, 0, 0, 0, 2.045, 0, 0, 0, 2.045, -6.603094, -1.18122, 15.581022)

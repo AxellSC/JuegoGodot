@@ -44,7 +44,7 @@ size = Vector3(1.1, 2.1, 1.1)
 [node name="TestLvl" type="Node3D" unique_id=1621458406]
 
 [node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("1_wugy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35753107, 0.2754432, -10.431783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8342493, 0.07790387, -5.60938)
 
 [node name="Platform" parent="." unique_id=868075276 instance=ExtResource("2_pbtxe")]
 transform = Transform3D(1.4575365, 0, 0, 0, 1, 0, 0, 0, 6.0548596, -0.016551137, 0.14875317, 0.40336466)
@@ -58,37 +58,53 @@ transform = Transform3D(1, 0, 0, 0, 0.34667897, 0.9379839, 0, -0.9379839, 0.3466
 [node name="ArbolTest" parent="." unique_id=985330101 instance=ExtResource("4_s0x45")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.3698716)
 
-[node name="ArbolTest2" parent="." unique_id=230141473 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.64907384, 1.1628647, -4.748966)
-
-[node name="ArbolTest3" parent="." unique_id=134097433 instance=ExtResource("4_s0x45")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.6228938, 0.40461117, -1.2878451)
-
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.045610547, 3.5063152)
+amount = 1
+
+[node name="ItemPickup5" parent="." unique_id=146867676 instance=ExtResource("5_xo2fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86397076, 0.045610547, 3.5063152)
+amount = 1
 
 [node name="ItemPickup2" parent="." unique_id=1281077011 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, -0.28337693, 0.37896955, 6.136485)
+item_id = &"ember_feather"
+
+[node name="ItemPickup6" parent="." unique_id=1550766054 instance=ExtResource("5_xo2fk")]
+transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, -0.28337693, 0.37896955, 8.567045)
 item_id = &"ember_feather"
 
 [node name="ItemPickup3" parent="." unique_id=891757011 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(0.99931645, 0.036814928, -0.0033490954, -0.036838174, 0.99929553, -0.007167135, 0.0030828703, 0.007285614, 0.9999687, -1.3369954, 0.31865764, 5.7636995)
 item_id = &"moonlit_mushroom"
 
-[node name="hongoA2" parent="." unique_id=2029807790 instance=ExtResource("6_8ksv1")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.958744, -1.366071, -1.1529189)
+[node name="rock_planeA2" parent="." unique_id=460933434 instance=ExtResource("8_g6moc")]
+transform = Transform3D(-0.06491208, 0, 0.5964784, 0, 0.6, 0, -0.5964784, 0, -0.06491208, 0.1253438, -0.023964286, -3.2746992)
 
-[node name="hongoA3" parent="." unique_id=508375042 instance=ExtResource("6_8ksv1")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -15.385373, -1.4288673, -5.8757825)
+[node name="rock_planeA3" parent="." unique_id=24127356 instance=ExtResource("8_g6moc")]
+transform = Transform3D(-0.1081868, 0, 0.9941306, 0, 1, 0, -0.9941306, 0, -0.1081868, 0.1253438, -0.023964286, -8.228916)
 
-[node name="hongoB" parent="." unique_id=84761435 instance=ExtResource("7_cungd")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.8346, -2.3488417, -5.201272)
+[node name="rock_planeB2" parent="." unique_id=420025001 instance=ExtResource("12_imbk5")]
+transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, -4, 0, -6)
 
-[node name="hongoD2" parent="." unique_id=2030632703 instance=ExtResource("8_g6moc")]
-transform = Transform3D(-0.087324165, 0, 0.49231544, 0, 0.5, 0, -0.49231544, 0, -0.087324165, -7.128669, -1.5461369, -13.546928)
+[node name="rock_planeC2" parent="." unique_id=1164926904 instance=ExtResource("13_y6mh5")]
+transform = Transform3D(-1.7320508, 0, 1.0000001, 0, 2, 0, -1.0000001, 0, -1.7320508, -4.4651136, 0, -2.6033754)
 
-[node name="hongoD3" parent="." unique_id=928714427 instance=ExtResource("8_g6moc")]
-transform = Transform3D(-0.087324165, 0, 0.49231544, 0, 0.5, 0, -0.49231544, 0, -0.087324165, -15.536689, -1.4522197, -3.8380828)
+[node name="hongoInteractivoA" parent="." unique_id=200170276 instance=ExtResource("16_cxga4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.3337828, -10.204914)
+
+[node name="hongoInteractivoA2" parent="." unique_id=714141905 instance=ExtResource("16_cxga4")]
+transform = Transform3D(-0.76535636, 0, 0.6436068, 0, 1, 0, -0.6436068, 0, -0.76535636, 1.6618133, -0.15696508, -13.306665)
+
+[node name="hongoInteractivoA3" parent="." unique_id=711636775 instance=ExtResource("16_cxga4")]
+transform = Transform3D(0.95470625, 0, -0.29755, 0, 1, 0, 0.29755, 0, 0.95470625, 0.8075414, -0.3064993, -11.701651)
+
+[node name="ItemPickup4" parent="." unique_id=1258681714 instance=ExtResource("5_xo2fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16056708, 0)
+amount = 1
+
+[node name="QuestGiverArea" parent="." unique_id=248033050 instance=ExtResource("10_cungd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9006956, 0.87865424, 0.67608213)
 
 [node name="hongoGigante2" parent="." unique_id=1200327564 instance=ExtResource("9_1lh5u")]
 transform = Transform3D(-0.4597958, 0, -0.19643791, 0, 0.5, 0, 0.19643791, 0, -0.4597958, -9.834907, -2.8582706, -23.592144)

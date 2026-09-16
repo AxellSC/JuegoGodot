@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cbbje0cgrb2gs"]
+
+[ext_resource type="PackedScene" uid="uid://8r3gwcps5uja" path="res://resources/modelos glb/hongoC.glb" id="1_7vnbc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bcycw"]
+size = Vector3(0.7755127, 0.9258423, 0.88427734)
+
+[node name="hongoC" unique_id=132800755 instance=ExtResource("1_7vnbc")]
+
+[node name="hongoB" parent="." index="0" unique_id=1601006839]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1863699091]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1554849426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27252197, 0.46127093, -0.00062584877)
+shape = SubResource("BoxShape3D_bcycw")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TaskData" format=3 uid="uid://cby6c860me6wa"]
+
+[ext_resource type="Script" uid="uid://hlfwotrki761" path="res://quests/TaskData.gd" id="1_83gpa"]
+
+[resource]
+script = ExtResource("1_83gpa")
+type = 1
+description = "¡Encuentra la zona de Hongos!"
+target_name = "Hongos"
+metadata/_custom_type_script = "uid://hlfwotrki761"

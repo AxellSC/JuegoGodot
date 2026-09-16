@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3lca6eww7m5g"
-path="res://.godot/imported/hongoGigante.glb-682b021c37dc6214a2c216037828a4cc.scn"
+uid="uid://ct7wgd4um42xx"
+path="res://.godot/imported/rock_planeB.glb-81e9589c9c68993eb5cf95e78d533b0e.scn"
 
 [deps]
 
-source_file="res://assets/3d/enviroment/hongoGigante.glb"
-dest_files=["res://.godot/imported/hongoGigante.glb-682b021c37dc6214a2c216037828a4cc.scn"]
+source_file="res://resources/modelos glb/rock_planeB.glb"
+dest_files=["res://.godot/imported/rock_planeB.glb-81e9589c9c68993eb5cf95e78d533b0e.scn"]
 
 [params]
 

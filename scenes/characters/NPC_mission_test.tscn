@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bu5ltwrf7wqbb"]
+
+[ext_resource type="Script" uid="uid://5ok5mnqnpmej" path="res://quest_giver_area.gd" id="1_f7pp3"]
+[ext_resource type="Resource" uid="uid://dl0ful4fdt4sa" path="res://Misiones/mission1.tres" id="2_ynyps"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f5u5i"]
+radius = 2.1069179
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_f5u5i"]
+
+[node name="QuestGiverArea" type="Area3D" unique_id=248033050]
+script = ExtResource("1_f7pp3")
+quest_to_assign = ExtResource("2_ynyps")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=522510466]
+shape = SubResource("SphereShape3D_f5u5i")
+
+[node name="NPC ejemplo" type="MeshInstance3D" parent="." unique_id=1995058012]
+mesh = SubResource("CapsuleMesh_f5u5i")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=662675476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2474287, 0)
+text = "Nueva Mision"

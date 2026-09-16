@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://daqgti313v3m4"
-path="res://.godot/imported/hongoA.glb-efbe074ed604521283bdb6b4fd306c14.scn"
+uid="uid://mjknw0m3vu6d"
+path="res://.godot/imported/Tree.glb-5d829e64c92841249aeb201d5329fb58.scn"
 
 [deps]
 
-source_file="res://assets/3d/enviroment/hongoA.glb"
-dest_files=["res://.godot/imported/hongoA.glb-efbe074ed604521283bdb6b4fd306c14.scn"]
+source_file="res://resources/modelos glb/Tree.glb"
+dest_files=["res://.godot/imported/Tree.glb-5d829e64c92841249aeb201d5329fb58.scn"]
 
 [params]
 
