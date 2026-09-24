@@ -42,5 +42,9 @@ shape = SubResource("BoxShape3D_y6mh5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlantPivot/ClimbZone" unique_id=1229159203]
 shape = SubResource("BoxShape3D_8vrlf")
 
+[node name="instruccion" type="Label3D" parent="." unique_id=1051436704]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.998271, 2.0751352, -0.009984732)
+text = "\"¡Usa el hechizo de crecimiento!\""
+
 [connection signal="body_entered" from="PlantPivot/ClimbZone" to="." method="_on_climb_zone_body_entered"]
 [connection signal="body_exited" from="PlantPivot/ClimbZone" to="." method="_on_climb_zone_body_exited"]
