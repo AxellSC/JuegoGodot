@@ -8,9 +8,9 @@ signal potion_use_failed(potion_id: String, reason: String)
 
 # Diccionario base con los datos
 var potions: Dictionary = {
-	"potionA": {"unlocked": false, "available": false},
-	"potionB": {"unlocked": false, "available": false},
-	"potionC": {"unlocked": false, "available": false},
+	"powerA": {"unlocked": false, "available": false},
+	"powerC": {"unlocked": false, "available": false},
+	"powerD": {"unlocked": false, "available": false},
 }
 
 ## Desbloquea una poción / receta
@@ -59,3 +59,10 @@ func try_use_potion(potion_id: String) -> bool:
 	# Si cumple ambas condiciones:
 	potion_used.emit(potion_id)
 	return true
+	
+## Comprueba si la poción está desbloqueada
+func is_potion_unlocked(potion_id: String) -> bool:
+	if not potions.has(potion_id):
+		print("ERROR: La poción '", potion_id, "' no existe en el diccionario.")
+		return false
+	return potions[potion_id].get("unlocked", false)
