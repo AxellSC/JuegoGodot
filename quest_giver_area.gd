@@ -20,6 +20,7 @@ func _on_body_entered(body: Node3D) -> void:
 	# Verificamos los 3 estados
 	if QuestManager.is_quest_completed(quest_id):
 		print("[NPC]: Ya has completado esta misión, ¡buen trabajo!")
+		PowersManager.unlock_potion("potionB")
 	elif QuestManager.is_quest_in_progress(quest_id):
 		print("[NPC]: Aún tienes la misión en progreso, sigue buscando.")
 	else:
