@@ -13,8 +13,8 @@ func _ready() -> void:
 	# Changed 0.0 to 0.01 so the physics engine doesn't ignore it!
 	plant_pivot.scale = Vector3(1.0, 0, 1.0) 
 	spell_zone.body_entered.connect(_on_body_entered)
-	climb_zone.body_entered.connect(_on_climb_zone_body_entered)
-	climb_zone.body_exited.connect(_on_climb_zone_body_exited)
+	#climb_zone.body_entered.connect(_on_climb_zone_body_entered)
+	#climb_zone.body_exited.connect(_on_climb_zone_body_exited)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and not has_grown:
