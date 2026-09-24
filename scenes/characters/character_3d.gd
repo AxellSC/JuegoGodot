@@ -26,11 +26,16 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 var was_on_floor: bool = false
 
+# variables para escalar
+var is_climbing: bool = false
+var can_climb: bool = false
+var climb_speed: float = 2.5
+
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	camera_mount.set_as_top_level(true)
 	add_to_group("player")
-	
+
 
 	current_pitch = camera_mount.rotation.x
 	target_pitch = current_pitch
@@ -40,10 +45,10 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		# Actualizar ángulos objetivo según el movimiento del mouse
 		target_pitch -= event.relative.y * sens_vertical
-		
+
 		# Limitar los ángulos
 		target_pitch = clamp(target_pitch, deg_to_rad(min_pitch_deg), deg_to_rad(max_pitch_deg))
-		
+
 	if event.is_action_pressed("drop"):
 		_drop_first_item()
 
@@ -62,26 +67,61 @@ func _jump() -> void:
 	coyote_timer.stop()
 	jump_buffer_timer.stop()
 
+# functions to detect the climb zone
+func _on_climb_zone_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		can_climb = true
+
+func _on_climb_zone_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		can_climb = false
+
 func _physics_process(delta: float) -> void:
 
-	
+
 	# Solo actualizamos la altura objetivo si el personaje está tocando el suelo
 	if is_on_floor():
 		target_camera_y = global_position.y
-		
+
 
 	var target_pos = Vector3(global_position.x, target_camera_y, global_position.z)
-	
+
 	var follow_factor = 1.0 - exp(-camera_follow_speed * delta)
 	camera_mount.global_position = camera_mount.global_position.lerp(target_pos, follow_factor)
-	
+
 	var rot_factor = 1.0 - exp(-camera_rotation_speed * delta)
 	current_pitch = lerp(current_pitch, target_pitch, rot_factor)
 	camera_mount.rotation.x = current_pitch
 
-	
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	# climbing logic
+	# we can only climb if we are inside the zone & touching the plant wall
+	if can_climb and is_on_wall():
+		if Input.is_action_pressed("up") or Input.is_action_pressed("down"): 
+			is_climbing = true
+	else:
+		is_climbing = false
+
+	if is_climbing:
+		# turn off gravity while climbing
+		velocity.y = 0 
+		
+		# up and down move us
+		if Input.is_action_pressed("up"):
+			velocity.y = climb_speed
+		elif Input.is_action_pressed("down"):
+			velocity.y = -climb_speed
+		else:
+			velocity.y = 0 # stay still if no vertical key is pressed
+
+		# jump lets go
+		if Input.is_action_just_pressed("ui_accept"):
+			is_climbing = false
+			_jump()
+			
+	else:
+		# apply gravity when not climbing
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
 	var just_left_ledge: bool = was_on_floor and not is_on_floor() and velocity.y <= 0.0
 	if just_left_ledge:
@@ -102,10 +142,10 @@ func _physics_process(delta: float) -> void:
 		_jump()
 		did_jump = true
 
-	
+
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (camera_mount.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
+
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -118,7 +158,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-		
+
 		# Proteger la animación de salto comprobando que estemos en el suelo
 		if is_on_floor() and not did_jump:
 			if animation_player:

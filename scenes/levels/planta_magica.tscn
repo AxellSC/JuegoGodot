@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://04c1vg2jk0af"]
+
+[ext_resource type="Script" uid="uid://cvgjj0sxt5d8d" path="res://planta_magica.gd" id="1_hnjnv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vivr"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8vrlf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imbk5"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y6mh5"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vrlf"]
+size = Vector3(1.2, 3.2, 1.2)
+
+[node name="PlantaMagica" type="Node3D" unique_id=1854532972]
+script = ExtResource("1_hnjnv")
+grow_height = 2.5
+
+[node name="SpellZone" type="Area3D" parent="." unique_id=1545876002]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpellZone" unique_id=1282165821]
+shape = SubResource("BoxShape3D_1vivr")
+
+[node name="PlantPivot" type="Node3D" parent="." unique_id=21479611]
+
+[node name="PlantCube" type="MeshInstance3D" parent="PlantPivot" unique_id=655487982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_8vrlf")
+surface_material_override/0 = SubResource("StandardMaterial3D_imbk5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlantPivot" unique_id=1958750322]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantPivot/StaticBody3D" unique_id=1258076495]
+shape = SubResource("BoxShape3D_y6mh5")
+
+[node name="ClimbZone" type="Area3D" parent="PlantPivot" unique_id=2021650077]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlantPivot/ClimbZone" unique_id=1229159203]
+shape = SubResource("BoxShape3D_8vrlf")
+
+[connection signal="body_entered" from="PlantPivot/ClimbZone" to="." method="_on_climb_zone_body_entered"]
+[connection signal="body_exited" from="PlantPivot/ClimbZone" to="." method="_on_climb_zone_body_exited"]
