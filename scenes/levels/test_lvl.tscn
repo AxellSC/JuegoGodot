@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://vfjtmp2m33e5" path="res://scenes/locations/Zona.tscn" id="11_g6moc"]
 [ext_resource type="PackedScene" uid="uid://bkv8aejmoy8e8" path="res://scenes/levels/luciernaga.tscn" id="12_1lh5u"]
 [ext_resource type="PackedScene" uid="uid://j1mcvaosp0gi" path="res://assets/3d/enviroment/rock_plane_b_2.tscn" id="12_imbk5"]
+[ext_resource type="PackedScene" uid="uid://04c1vg2jk0af" path="res://scenes/levels/planta_magica.tscn" id="13_imbk5"]
 [ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="13_y6mh5"]
 [ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="16_cxga4"]
 
@@ -108,3 +109,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.054, 2.5921714)
 
 [node name="luciernaga" parent="." unique_id=764468294 instance=ExtResource("12_1lh5u")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.43035257, 1.1470625, -1.6666169)
+
+[node name="PlantaMagica" parent="." unique_id=1854532972 instance=ExtResource("13_imbk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -7.509)
