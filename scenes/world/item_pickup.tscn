@@ -23,4 +23,5 @@ amount = 3
 shape = SubResource("SphereShape3D_bn2sh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1877042133]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07801053, 0)
 mesh = SubResource("CapsuleMesh_rnuuk")

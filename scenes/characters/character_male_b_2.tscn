@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://df8vy0k7qvunf"]
 
 [ext_resource type="PackedScene" uid="uid://dc0ow4xs0of67" path="res://assets/3d/character/character-male-b.glb" id="1_m4866"]
+[ext_resource type="Texture2D" uid="uid://c3ic1nx6mtcx2" path="res://assets/3d/character/colormap.png" id="2_hx6lp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qp12x"]
+albedo_texture = ExtResource("2_hx6lp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37xpg"]
+albedo_texture = ExtResource("2_hx6lp")
 
 [node name="character-male-b2" unique_id=589931105 instance=ExtResource("1_m4866")]
 
-[node name="Skeleton3D" parent="character-male-b" parent_id_path=PackedInt32Array(1425323009) index="0" unique_id=1428149071]
+[node name="Skeleton3D" parent="character-male-b" parent_id_path=PackedInt32Array(2143764317) index="0" unique_id=2124978658]
 bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
 bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=326726642]
+[node name="body-mesh" parent="character-male-b/Skeleton3D" index="0" unique_id=1013358610]
+material_override = SubResource("StandardMaterial3D_qp12x")
+
+[node name="head-mesh" parent="character-male-b/Skeleton3D" index="1" unique_id=1071906497]
+material_override = SubResource("StandardMaterial3D_37xpg")
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1673366924]
 autoplay = &"idle"

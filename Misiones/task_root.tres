@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_trk0o")
-description = "Encuentra las raices"
-target_name = "glowing_root"
+description = "Encuentra los hongos luminosos"
+target_name = "moonlit_mushroom"
 required_amount = 3
 metadata/_custom_type_script = "uid://hlfwotrki761"

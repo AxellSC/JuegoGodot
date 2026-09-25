@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="ItemIngredient" format=3 uid="uid://b1kww850fdvx8"]
 
 [ext_resource type="Script" uid="uid://xp2e762at2d5" path="res://scripts/items/item_ingredient.gd" id="1_sj27k"]
+[ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="2_orve4"]
 
 [resource]
 script = ExtResource("1_sj27k")
@@ -9,6 +10,7 @@ id = &"moonlit_mushroom"
 item_name = "Moonlit Mushroom"
 description = "Only grows where moonlight touches the forest floor. Very common.
 "
+world_scene = ExtResource("2_orve4")
 max_amount_per_slot = 5
 category = "ingredient"
 metadata/_custom_type_script = "uid://xp2e762at2d5"

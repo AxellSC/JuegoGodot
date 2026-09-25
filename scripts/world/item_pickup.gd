@@ -17,6 +17,9 @@ extends Area3D
 @onready var mesh_instance: MeshInstance3D = $MeshInstance3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
 
+# Reference to save the instantiated scene node
+var _spawned_visual_node: Node3D = null
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	_update_visual()
@@ -38,8 +41,15 @@ func _update_visual() -> void:
 	var item: Item = ItemDatabase.get_item(item_id)
 	if item == null:
 		return
-	if item.generic_mesh:
-		mesh_instance.mesh = item.generic_mesh
+	if item.world_scene:
+		# Ocultar la malla base/placeholder si existe
+		if mesh_instance:
+			mesh_instance.visible = false
+
+		var instance: Node3D = item.world_scene.instantiate() as Node3D
+		if instance:
+			add_child(instance)
+			_spawned_visual_node = instance
 
 ## Called when any physics body enters this pickup's area. If it's
 ## the player and it has an "Inventory" child node, tries to add this

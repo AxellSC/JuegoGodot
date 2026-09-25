@@ -48,10 +48,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.369871
 
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.045610547, 3.5063152)
+item_id = &"moonlit_mushroom"
 amount = 1
 
 [node name="ItemPickup5" parent="." unique_id=146867676 instance=ExtResource("5_xo2fk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86397076, 0.045610547, 3.5063152)
+item_id = &"moonlit_mushroom"
 amount = 1
 
 [node name="ItemPickup2" parent="." unique_id=1281077011 instance=ExtResource("5_xo2fk")]
@@ -88,7 +90,8 @@ transform = Transform3D(-0.76535636, 0, 0.6436068, 0, 1, 0, -0.6436068, 0, -0.76
 transform = Transform3D(0.95470625, 0, -0.29755, 0, 1, 0, 0.29755, 0, 0.95470625, 0.8075414, -0.3064993, -11.701651)
 
 [node name="ItemPickup4" parent="." unique_id=1258681714 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16056708, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.093817204, 0)
+item_id = &"moonlit_mushroom"
 amount = 1
 
 [node name="QuestGiverArea" parent="." unique_id=248033050 instance=ExtResource("10_cungd")]
