@@ -33,6 +33,7 @@ signal item_removed(item:Item, amount: int)
 ## units didn't fit. NOTE: not currently emitted anywhere in
 ## [method add_item] — reserved for when that case needs to be
 ## surfaced (e.g. to show a "inventory full" UI message).
+@warning_ignore("unused_signal")
 signal item_not_added(item:Item, leftover_amount:int)
 
 ## The 8 slots that make up this inventory, in display order.
