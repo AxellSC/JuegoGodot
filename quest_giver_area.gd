@@ -124,7 +124,7 @@ func _next_dialogue() -> void:
 func _show_dialogue_line() -> void:
 	dialogue_label.text = (
 		dialogue_lines[dialogue_index]
-		+ "\n\n[E] Continuar"
+		+ "\n\n[F] Continuar"
 	)
 
 	dialogue_panel.visible = true
@@ -166,11 +166,11 @@ func _close_dialogue() -> void:
 	dialogue_panel.visible = false
 
 # --------------------------------------------------
-# MENSAJE "E: HABLAR CON EL MAGO"
+# MENSAJE "F: HABLAR CON EL MAGO"
 # --------------------------------------------------
 
 func _show_prompt() -> void:
-	prompt_label.text = "E: Hablar con el mago"
+	prompt_label.text = "F: Hablar con el mago"
 	prompt_panel.visible = true
 
 
@@ -231,7 +231,7 @@ func _create_dialogue_ui() -> void:
 
 
 	prompt_label = Label.new()
-	prompt_label.text = "E: Hablar con el mago"
+	prompt_label.text = "F: Hablar con el mago"
 
 	prompt_label.horizontal_alignment = (
 		HORIZONTAL_ALIGNMENT_CENTER
