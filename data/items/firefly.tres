@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemCreature" format=3 uid="uid://d106n1d1xnri8"]
+
+[ext_resource type="Script" uid="uid://cebbxywxujcy3" path="res://scripts/items/item_creature.gd" id="1_5su8h"]
+[ext_resource type="PackedScene" uid="uid://bkv8aejmoy8e8" path="res://scenes/levels/luciernaga.tscn" id="2_titnj"]
+
+[resource]
+script = ExtResource("1_5su8h")
+creature_type = "firefly"
+id = &"firefly"
+item_name = "Luciérnaga"
+description = "Una pequeña luciérnaga que emite una tenue luz."
+world_scene = ExtResource("2_titnj")
+max_amount_per_slot = 5
+category = "creature"
+metadata/_custom_type_script = "uid://cebbxywxujcy3"
