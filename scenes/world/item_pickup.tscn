@@ -23,5 +23,10 @@ amount = 3
 shape = SubResource("SphereShape3D_bn2sh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1877042133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07801053, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27373564, 0)
 mesh = SubResource("CapsuleMesh_rnuuk")
+
+[node name="AgarrarE" type="Label3D" parent="." unique_id=1656799954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3852508, 0.5207112, -0.013100475)
+billboard = 1
+text = "Agarrar [E]"

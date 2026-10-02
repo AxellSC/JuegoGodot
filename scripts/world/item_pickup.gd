@@ -16,6 +16,7 @@ extends Area3D
 
 @onready var mesh_instance: MeshInstance3D = $MeshInstance3D
 @onready var collision_shape: CollisionShape3D = $CollisionShape3D
+@onready var agarrar_e: Label3D = $AgarrarE
 
 # Reference to save the instantiated scene node
 var _spawned_visual_node: Node3D = null
@@ -23,6 +24,7 @@ var _spawned_visual_node: Node3D = null
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	_update_visual()
+	agarrar_e.visible = false
 	
 ## Configures this pickup to represent [param new_amount] units of
 ## [param item]. Called by [Inventory] when spawning a dropped item;
@@ -59,7 +61,9 @@ func _update_visual() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if not body.is_in_group("player"):
 		return
-
+	
+	agarrar_e.visible = true
+	
 	var item: Item = ItemDatabase.get_item(item_id)
 	if item == null:
 		return
