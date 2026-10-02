@@ -30,3 +30,5 @@ mesh = SubResource("CapsuleMesh_rnuuk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3852508, 0.5207112, -0.013100475)
 billboard = 1
 text = "Agarrar [E]"
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
