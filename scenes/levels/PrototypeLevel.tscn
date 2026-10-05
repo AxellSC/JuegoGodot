@@ -10,11 +10,29 @@
 [ext_resource type="PackedScene" uid="uid://dyapd1e01ucdi" path="res://assets/3d/enviroment/rock_plane_a_2.tscn" id="7_vqcyc"]
 [ext_resource type="PackedScene" uid="uid://cmjrxojc8q2ci" path="res://assets/3d/enviroment/tree_trunk_b.tscn" id="9_bukqj"]
 [ext_resource type="PackedScene" uid="uid://cq0i7eu7wv6yk" path="res://assets/3d/Terrain/entire_terrain.tscn" id="10_hxq8y"]
+[ext_resource type="PackedScene" uid="uid://cuwgd0sn3cddc" path="res://scenes/characters/character_3d.tscn" id="12_j4qjx"]
+[ext_resource type="PackedScene" uid="uid://bkv8aejmoy8e8" path="res://scenes/levels/luciernaga.tscn" id="13_h1rpi"]
+[ext_resource type="Texture2D" uid="uid://bwfk6g6u6a5k6" path="res://resources/sky_textures/darkSky.png" id="13_xiyba"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ngqvl"]
 size = Vector3(3.335205, 1, 23.04271)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2qdtu"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xiyba"]
+panorama = ExtResource("13_xiyba")
+energy_multiplier = 0.7
+
+[sub_resource type="Sky" id="Sky_j4qjx"]
+sky_material = SubResource("PanoramaSkyMaterial_xiyba")
+
+[sub_resource type="Environment" id="Environment_f5u5i"]
+background_mode = 2
+background_energy_multiplier = 0.7
+sky = SubResource("Sky_j4qjx")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.008
+volumetric_fog_albedo = Color(2.7915835e-06, 0.79079515, 0.75914425, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1812938794]
 
@@ -62,3 +80,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7012339, 0.53879905, 22.220
 
 [node name="EntireTerrain" parent="." unique_id=340216399 instance=ExtResource("10_hxq8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.149, 0.11, -13.518)
+
+[node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("12_j4qjx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5944371, 26.2255)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378235712]
+environment = SubResource("Environment_f5u5i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1065209641]
+light_energy = 0.3
+shadow_enabled = true
+shadow_bias = 8.143
+shadow_opacity = 0.56
+
+[node name="LuciernagaP" parent="." unique_id=764468294 instance=ExtResource("13_h1rpi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.2799606, 1.1073599, 11)
+
+[node name="LuciernagaP2" parent="." unique_id=907009119 instance=ExtResource("13_h1rpi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.2799606, 1.6409316, 18.373297)
+
+[node name="WaypointA" type="Marker3D" parent="." unique_id=1723459671 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7904098, 15.268896)
+
+[node name="WaypointB" type="Marker3D" parent="." unique_id=236528061 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6057925, 14.657879)
+
+[node name="WaypointD" type="Marker3D" parent="." unique_id=517313660 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2254128, 2.1782825, 15.508865)
+
+[node name="WaypointC" type="Marker3D" parent="." unique_id=1703028674 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0354047, 2.1782825, 15.508865)
