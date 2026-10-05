@@ -13,7 +13,7 @@ emission_energy_multiplier = 3.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_smt0q"]
 radius = 12.0
 
-[node name="Node3D" type="Node3D" unique_id=764468294]
+[node name="LuciernagaP" type="Node3D" unique_id=764468294]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Luciernaga" type="Node3D" parent="." unique_id=1705714826]
@@ -25,7 +25,6 @@ mesh = SubResource("SphereMesh_1vivr")
 surface_material_override/0 = SubResource("StandardMaterial3D_1vivr")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Luciernaga" unique_id=68934050]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 light_color = Color(0.6627451, 1, 0, 1)
 omni_range = 2.0
 

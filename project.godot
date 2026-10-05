@@ -38,6 +38,10 @@ folder_colors={
 "res://scripts/": "blue"
 }
 
+[global_group]
+
+wander_points=""
+
 [input]
 
 left={
