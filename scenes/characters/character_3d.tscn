@@ -6,25 +6,25 @@
 [ext_resource type="Script" uid="uid://dk4k3cv2pwxiq" path="res://quests/QuestUI.gd" id="4_vtuf5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5u5i"]
-radius = 0.24707031
-height = 0.7955322
+radius = 0.39794922
+height = 1.4525642
 
 [node name="Character3D" type="CharacterBody3D" unique_id=919686785]
 collision_mask = 31
 script = ExtResource("1_ce57v")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1744896175]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34124756, 0)
+[node name="CapsulaCollider" type="CollisionShape3D" parent="." unique_id=1744896175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7053356, 0)
 shape = SubResource("CapsuleShape3D_f5u5i")
 
 [node name="camera_mount" type="Node3D" parent="." unique_id=1613553573]
 transform = Transform3D(-4.1675232e-08, -0.3016517, 0.9534182, -1.3185614e-08, 0.9534182, 0.3016517, -1, 0, -4.371139e-08, 2.4628184, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="camera_mount" unique_id=1005987983]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8831963e-07, 0.39225692, 4.3082504)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6827053e-07, 0.35962778, 6.137313)
 
 [node name="character-male-b2" parent="." unique_id=589931105 instance=ExtResource("2_ce57v")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 0, 0)
 
 [node name="Inventory" type="Node" parent="." unique_id=2027048704]
 script = ExtResource("3_tl8u2")

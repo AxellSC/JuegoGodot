@@ -22,8 +22,8 @@ var target_pitch = 0.0
 var target_camera_y = 0.0 
 
 # Variables de acción
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 7.0
+const JUMP_VELOCITY = 5.5
 var was_on_floor: bool = false
 
 # variables para escalar
