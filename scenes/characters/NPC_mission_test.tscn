@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://5ok5mnqnpmej" path="res://quest_giver_area.gd" id="1_f7pp3"]
 [ext_resource type="Resource" uid="uid://dl0ful4fdt4sa" path="res://Misiones/mission1.tres" id="2_ynyps"]
+[ext_resource type="Resource" path="res://data/dialogues/mage_intro.tres" id="3_intro"]
+[ext_resource type="Resource" path="res://data/dialogues/mage_in_progress.tres" id="4_progress"]
+[ext_resource type="Resource" path="res://data/dialogues/mage_completed.tres" id="5_completed"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f5u5i"]
 radius = 2.1069179
@@ -10,7 +13,11 @@ radius = 2.1069179
 
 [node name="QuestGiverArea" type="Area3D" unique_id=248033050]
 script = ExtResource("1_f7pp3")
+prompt_text = "F: Hablar con el mago"
 quest_to_assign = ExtResource("2_ynyps")
+dialogue_not_started = ExtResource("3_intro")
+dialogue_in_progress = ExtResource("4_progress")
+dialogue_completed = ExtResource("5_completed")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=522510466]
 shape = SubResource("SphereShape3D_f5u5i")

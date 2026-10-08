@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_area.gd" id="1_dialogue_area"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dialogue"]
+radius = 2.0
+
+[node name="DialogueTrigger" type="Area3D"]
+script = ExtResource("1_dialogue_area")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dialogue")

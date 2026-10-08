@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_line.gd" id="2_line"]
+
+[sub_resource type="Resource" id="DialogueLine_1"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Aún no has terminado."
+
+[sub_resource type="Resource" id="DialogueLine_2"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Sigue buscando los objetos que te pedí."
+
+[sub_resource type="Resource" id="DialogueLine_3"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Regresa cuando hayas completado tu misión."
+
+[resource]
+script = ExtResource("1_data")
+id = &"mage_in_progress"
+lines = Array[ExtResource("2_line")]([SubResource("DialogueLine_1"), SubResource("DialogueLine_2"), SubResource("DialogueLine_3")])
+advance_action = &"interact"
+continue_hint = "[F] Continuar"
