@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cwngnkndv7wln"]
+
+[ext_resource type="Texture2D" uid="uid://1t1c0qgcwtkj" path="res://assets/2d/inventario_0.2.png" id="1_5v8q7"]
+[ext_resource type="Script" uid="uid://bgqcjmdht27ee" path="res://inventory_ui.gd" id="1_gf3dx"]
+
+[node name="InventoryUI" type="Control" unique_id=1908535975]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gf3dx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=834946003]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -133.5
+offset_right = 160.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3362392, 1.2823981)
+texture = ExtResource("1_5v8q7")
+stretch_mode = 4
