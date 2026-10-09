@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cac1fm33gonll" path="res://scenes/locations/LocationObjectiveArea.gd" id="1_fmwgt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fmwgt"]
-size = Vector3(2, 2, 2)
+size = Vector3(6, 3, 8)
 
 [node name="Zona" type="Area3D" unique_id=739245093]
 collision_layer = 2

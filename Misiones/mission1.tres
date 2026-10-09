@@ -5,9 +5,16 @@
 [ext_resource type="Resource" uid="uid://4eqggqejlsq4" path="res://Misiones/task_root.tres" id="3_oj5w2"]
 [ext_resource type="Resource" uid="uid://cby6c860me6wa" path="res://Misiones/taskLocacion_cube.tres" id="4_tiopo"]
 
+[sub_resource type="Resource" id="Resource_060oi"]
+script = ExtResource("2_oj5w2")
+description = "Atrapa a las luciernagas"
+target_name = "firefly"
+required_amount = 2
+metadata/_custom_type_script = "uid://hlfwotrki761"
+
 [resource]
 script = ExtResource("1_x6b7t")
 id = "mision_01"
 title = "¡Vamos al bosque!"
-tasks = Array[ExtResource("2_oj5w2")]([ExtResource("3_oj5w2"), ExtResource("4_tiopo")])
+tasks = Array[ExtResource("2_oj5w2")]([ExtResource("3_oj5w2"), ExtResource("4_tiopo"), SubResource("Resource_060oi")])
 metadata/_custom_type_script = "uid://mpeh5jkckn10"

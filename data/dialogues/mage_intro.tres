@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="DialogueData" format=3]
+[gd_resource type="Resource" script_class="DialogueData" format=3 uid="uid://p02j7tcxhgsd"]
 
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_data.gd" id="1_data"]
-[ext_resource type="Script" path="res://scripts/dialogue/dialogue_line.gd" id="2_line"]
+[ext_resource type="Script" uid="uid://b4eg2suprq35j" path="res://scripts/dialogue/dialogue_data.gd" id="1_data"]
+[ext_resource type="Script" uid="uid://bqyhmqc1t1wp4" path="res://scripts/dialogue/dialogue_line.gd" id="2_line"]
 
 [sub_resource type="Resource" id="DialogueLine_1"]
 script = ExtResource("2_line")
@@ -37,5 +37,3 @@ text = "Encuéntralos y tráelos conmigo."
 script = ExtResource("1_data")
 id = &"mage_intro"
 lines = Array[ExtResource("2_line")]([SubResource("DialogueLine_1"), SubResource("DialogueLine_2"), SubResource("DialogueLine_3"), SubResource("DialogueLine_4"), SubResource("DialogueLine_5"), SubResource("DialogueLine_6")])
-advance_action = &"interact"
-continue_hint = "[F] Continuar"

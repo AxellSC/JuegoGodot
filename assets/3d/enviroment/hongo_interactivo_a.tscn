@@ -82,6 +82,7 @@ radius = 0.061347883
 [node name="hongoInteractivoA" type="Node3D" unique_id=200170276]
 
 [node name="block" type="StaticBody3D" parent="." unique_id=326372795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45689905, 0)
 collision_layer = 2
 collision_mask = 3
 
@@ -90,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.037368774, 0.34275818, -0.0
 shape = SubResource("BoxShape3D_hog1q")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1634170576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45689905, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1769392127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009187698, 0.75060546, -0.017593384)
@@ -100,14 +102,14 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_kfd45")
 
 [node name="ConeTwistJoint3D" type="ConeTwistJoint3D" parent="." unique_id=1014389693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004492998, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004492998, -0.45689905, 0)
 node_a = NodePath("../Pivote")
 node_b = NodePath("../RigidBody3D")
 swing_span = 0.017453292
 twist_span = 0.017453292
 
 [node name="Pivote" type="StaticBody3D" parent="." unique_id=1786877594]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0051534176, 0.05989927, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0051534176, -0.39699972, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pivote" unique_id=1967676929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0890265, 0)

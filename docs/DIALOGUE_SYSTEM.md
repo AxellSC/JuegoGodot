@@ -29,7 +29,7 @@ También puedes adjuntar `res://scripts/dialogue/dialogue_area.gd` a cualquier `
 @export var my_dialogue: DialogueData
 
 func some_event() -> void:
-    DialogueManager.start_dialogue(my_dialogue, self)
+	DialogueManager.start_dialogue(my_dialogue, self)
 ```
 
 Para reaccionar al final desde cualquier sistema:

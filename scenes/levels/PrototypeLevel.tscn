@@ -13,11 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://cuwgd0sn3cddc" path="res://scenes/characters/character_3d.tscn" id="12_j4qjx"]
 [ext_resource type="PackedScene" uid="uid://bkv8aejmoy8e8" path="res://scenes/levels/luciernaga.tscn" id="13_h1rpi"]
 [ext_resource type="Texture2D" uid="uid://bwfk6g6u6a5k6" path="res://resources/sky_textures/darkSky.png" id="13_xiyba"]
+[ext_resource type="PackedScene" uid="uid://bu5ltwrf7wqbb" path="res://scenes/characters/NPC_mission_test.tscn" id="14_h1rpi"]
+[ext_resource type="PackedScene" uid="uid://lh22dnknhdkf" path="res://scenes/world/item_pickup.tscn" id="15_060oi"]
+[ext_resource type="PackedScene" uid="uid://vfjtmp2m33e5" path="res://scenes/locations/Zona.tscn" id="16_c1ajm"]
+[ext_resource type="PackedScene" uid="uid://04c1vg2jk0af" path="res://scenes/levels/planta_magica.tscn" id="17_1jlvi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ngqvl"]
 size = Vector3(3.335205, 1, 23.04271)
-
-[sub_resource type="BoxMesh" id="BoxMesh_2qdtu"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xiyba"]
 panorama = ExtResource("13_xiyba")
@@ -41,10 +43,6 @@ transform = Transform3D(1.7826996, 0, 0, 0, 1, 0, 0, 0, 1, -1.2331368, 0, 20.817
 visible = false
 mesh = SubResource("BoxMesh_ngqvl")
 
-[node name="Mago" type="MeshInstance3D" parent="." unique_id=1861951491]
-transform = Transform3D(3.9859862, 0, 0, 0, 4.557985, 0, 0, 0, 3.694128, -32.31049, 4.6010876, -63.055546)
-mesh = SubResource("BoxMesh_2qdtu")
-
 [node name="TreeA" parent="." unique_id=284384092 instance=ExtResource("2_thjlo")]
 transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -7.1766853, 3.8478842, -10.888945)
 
@@ -52,10 +50,10 @@ transform = Transform3D(3.25, 0, 0, 0, 3.25, 0, 0, 0, 3.25, -7.1766853, 3.847884
 transform = Transform3D(2.48, 0, 0, 0, 2.48, 0, 0, 0, 2.48, -6.7664046, -1.292067, 26.697706)
 
 [node name="hongoInteractivo" parent="." unique_id=1272626509 instance=ExtResource("3_rreqg")]
-transform = Transform3D(2.63, 0, 0, 0, 2.63, 0, 0, 0, 2.63, -10.317579, 1.0189562, -17.724371)
+transform = Transform3D(2.63, 0, 0, 0, 2.63, 0, 0, 0, 2.63, -12.079159, 1.0189562, -24.669758)
 
 [node name="hongoInteractivoA" parent="." unique_id=200170276 instance=ExtResource("4_vqcyc")]
-transform = Transform3D(2.63, 0, 0, 0, 2.63, 0, 0, 0, 2.63, -11.151173, 1.0683303, -19.054283)
+transform = Transform3D(2.63, 0, 0, 0, 2.63, 0, 0, 0, 2.63, -12.912752, 1.0683303, -25.99967)
 
 [node name="rock_planeC2" parent="." unique_id=1164926904 instance=ExtResource("6_bukqj")]
 transform = Transform3D(1.64, 0, 0, 0, 1.64, 0, 0, 0, 1.64, -5.594177, 1.0801153, -6.1714354)
@@ -82,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7012339, 0.53879905, 22.220
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.149, 0.11, -13.518)
 
 [node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("12_j4qjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5944371, 26.2255)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.080557, 1.3792119, -18.876953)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378235712]
 environment = SubResource("Environment_f5u5i")
@@ -94,19 +92,44 @@ shadow_bias = 8.143
 shadow_opacity = 0.56
 
 [node name="LuciernagaP" parent="." unique_id=764468294 instance=ExtResource("13_h1rpi")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.2799606, 1.1073599, 11)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -15.6744, 2.2009735, -18.619446)
 
 [node name="LuciernagaP2" parent="." unique_id=907009119 instance=ExtResource("13_h1rpi")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.2799606, 1.6409316, 18.373297)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -12.835165, 2.7345452, -15.42412)
 
 [node name="WaypointA" type="Marker3D" parent="." unique_id=1723459671 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7904098, 15.268896)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.339487, 1.7904098, -15.628914)
 
 [node name="WaypointB" type="Marker3D" parent="." unique_id=236528061 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6057925, 14.657879)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.278204, 2.6057925, -15.76439)
 
 [node name="WaypointD" type="Marker3D" parent="." unique_id=517313660 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2254128, 2.1782825, 15.508865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.168171, 2.1782825, -19.20184)
 
 [node name="WaypointC" type="Marker3D" parent="." unique_id=1703028674 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0354047, 2.1782825, 15.508865)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.313608, 2.1782825, -20.043995)
+
+[node name="QuestGiverArea" parent="." unique_id=248033050 instance=ExtResource("14_h1rpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.052254, 3.3527708, -64.2383)
+
+[node name="Zona" parent="." unique_id=739245093 instance=ExtResource("16_c1ajm")]
+transform = Transform3D(0.118814185, 0, -0.9929165, 0, 1, 0, 0.9929165, 0, 0.118814185, -8.755787, 2.512065, -23.882624)
+zone_id = "Hongos"
+
+[node name="hongo" parent="Zona" unique_id=2146145943 instance=ExtResource("15_060oi")]
+transform = Transform3D(0.118814185, 0, 0.9929165, 0, 1, 0, -0.9929165, 0, 0.118814185, -0.39247894, -1.0550733, 0.86857724)
+item_id = &"moonlit_mushroom"
+amount = 1
+
+[node name="hongo2" parent="Zona" unique_id=1455024775 instance=ExtResource("15_060oi")]
+transform = Transform3D(0.118814185, 0, 0.9929165, 0, 1, 0, -0.9929165, 0, 0.118814185, 0.35672188, -1.0550733, 3.3028898)
+item_id = &"moonlit_mushroom"
+amount = 1
+
+[node name="hongo3" parent="Zona" unique_id=1462157805 instance=ExtResource("15_060oi")]
+transform = Transform3D(0.118814185, 0, 0.9929165, 0, 1, 0, -0.9929165, 0, 0.118814185, -0.6662159, -1.4361367, -3.3243237)
+item_id = &"moonlit_mushroom"
+amount = 1
+
+[node name="PlantaMagica" parent="." unique_id=1854532972 instance=ExtResource("17_1jlvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8998723, 2.101068, -87.62219)
