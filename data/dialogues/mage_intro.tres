@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="DialogueData" format=3]
+
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/dialogue/dialogue_line.gd" id="2_line"]
+
+[sub_resource type="Resource" id="DialogueLine_1"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Ah... por fin llegaste."
+
+[sub_resource type="Resource" id="DialogueLine_2"]
+script = ExtResource("2_line")
+speaker = "Jugador"
+text = "¿Quién eres?"
+
+[sub_resource type="Resource" id="DialogueLine_3"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Eso puede esperar."
+
+[sub_resource type="Resource" id="DialogueLine_4"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Primero necesito tu ayuda."
+
+[sub_resource type="Resource" id="DialogueLine_5"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Hay ciertos objetos dispersos por esta zona."
+
+[sub_resource type="Resource" id="DialogueLine_6"]
+script = ExtResource("2_line")
+speaker = "Mago"
+text = "Encuéntralos y tráelos conmigo."
+
+[resource]
+script = ExtResource("1_data")
+id = &"mage_intro"
+lines = Array[ExtResource("2_line")]([SubResource("DialogueLine_1"), SubResource("DialogueLine_2"), SubResource("DialogueLine_3"), SubResource("DialogueLine_4"), SubResource("DialogueLine_5"), SubResource("DialogueLine_6")])
+advance_action = &"interact"
+continue_hint = "[F] Continuar"
