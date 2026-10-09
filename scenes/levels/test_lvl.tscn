@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://j1mcvaosp0gi" path="res://assets/3d/enviroment/rock_plane_b_2.tscn" id="12_imbk5"]
 [ext_resource type="PackedScene" uid="uid://04c1vg2jk0af" path="res://scenes/levels/planta_magica.tscn" id="13_imbk5"]
 [ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="13_y6mh5"]
+[ext_resource type="PackedScene" uid="uid://cwngnkndv7wln" path="res://inventory_ui.tscn" id="14_y6mh5"]
 [ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="16_cxga4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b5l1p"]
@@ -124,3 +125,17 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.884706, 1.1470625, 0.
 
 [node name="PlantaMagica" parent="." unique_id=1854532972 instance=ExtResource("13_imbk5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -7.509)
+
+[node name="InventoryUI" parent="." unique_id=1908535975 instance=ExtResource("14_y6mh5")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 224.0
+offset_top = -4.0
+offset_right = 224.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.60780394, 0.59297025)
