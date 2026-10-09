@@ -3,15 +3,10 @@
 [ext_resource type="Script" uid="uid://gndi4mt3egdp" path="res://scripts/world/item_pickup.gd" id="1_ofb8q"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bn2sh"]
-radius = 0.3
+radius = 0.94823784
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xo2fk"]
-albedo_color = Color(0.68665683, 0.29576004, 0.82325315, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_rnuuk"]
-material = SubResource("StandardMaterial3D_xo2fk")
-radius = 0.05
-height = 0.1
+[sub_resource type="CylinderMesh" id="CylinderMesh_c1ajm"]
+height = 1.1000977
 
 [node name="ItemPickup" type="Area3D" unique_id=2146145943]
 collision_layer = 8
@@ -20,15 +15,17 @@ item_id = &"glowing_root"
 amount = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1767963339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62125, 0)
 shape = SubResource("SphereShape3D_bn2sh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1877042133]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.27373564, 0)
-mesh = SubResource("CapsuleMesh_rnuuk")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17621553, 0)
+mesh = SubResource("CylinderMesh_c1ajm")
 
 [node name="AgarrarE" type="Label3D" parent="." unique_id=1656799954]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3852508, 0.5207112, -0.013100475)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01274085, 1.2905021, -0.023798823)
 billboard = 1
 text = "Agarrar [E]"
+font_size = 64
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

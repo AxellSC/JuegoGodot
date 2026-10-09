@@ -2,29 +2,77 @@
 
 [ext_resource type="Script" uid="uid://5ok5mnqnpmej" path="res://quest_giver_area.gd" id="1_f7pp3"]
 [ext_resource type="Resource" uid="uid://dl0ful4fdt4sa" path="res://Misiones/mission1.tres" id="2_ynyps"]
-[ext_resource type="Resource" path="res://data/dialogues/mage_intro.tres" id="3_intro"]
-[ext_resource type="Resource" path="res://data/dialogues/mage_in_progress.tres" id="4_progress"]
-[ext_resource type="Resource" path="res://data/dialogues/mage_completed.tres" id="5_completed"]
+[ext_resource type="Resource" uid="uid://p02j7tcxhgsd" path="res://data/dialogues/mage_intro.tres" id="3_intro"]
+[ext_resource type="Resource" uid="uid://byjclgqh26f4n" path="res://data/dialogues/mage_in_progress.tres" id="4_progress"]
+[ext_resource type="Resource" uid="uid://btvid71o1sdr7" path="res://data/dialogues/mage_completed.tres" id="5_completed"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f5u5i"]
-radius = 2.1069179
+radius = 3.2091315
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f5u5i"]
+radius = 1.1142578
+height = 5.1550293
+
+[sub_resource type="Animation" id="Animation_c6w4k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 4.473227, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_orqit"]
+resource_name = "rebote"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1.189207, 2.070531, 1.7411014),
+"update": 0,
+"values": [Vector3(0, 4.473227, 0), Vector3(0, 5, 0), Vector3(0, 4.473, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ircr2"]
+_data = {
+&"RESET": SubResource("Animation_c6w4k"),
+&"rebote": SubResource("Animation_orqit")
+}
 
 [node name="QuestGiverArea" type="Area3D" unique_id=248033050]
 script = ExtResource("1_f7pp3")
-prompt_text = "F: Hablar con el mago"
 quest_to_assign = ExtResource("2_ynyps")
 dialogue_not_started = ExtResource("3_intro")
 dialogue_in_progress = ExtResource("4_progress")
 dialogue_completed = ExtResource("5_completed")
+prompt_text = "F: Hablar con el mago"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=522510466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8345537, 0)
 shape = SubResource("SphereShape3D_f5u5i")
 
 [node name="NPC ejemplo" type="MeshInstance3D" parent="." unique_id=1995058012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3275146, 0)
 mesh = SubResource("CapsuleMesh_f5u5i")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=662675476]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2474287, 0)
-text = "Nueva Mision"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.473227, 0)
+billboard = 1
+text = "!"
+font_size = 200
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label3D" unique_id=2114298853]
+libraries/ = SubResource("AnimationLibrary_ircr2")
+autoplay = &"rebote"
