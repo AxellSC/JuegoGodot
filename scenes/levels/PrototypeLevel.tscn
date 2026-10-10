@@ -62,7 +62,7 @@ transform = Transform3D(1.64, 0, 0, 0, 1.64, 0, 0, 0, 1.64, -5.594177, 1.0801153
 transform = Transform3D(1.459866, 0, 0, 0, 0.99999964, 0, 0, 0, 1.6184857, -2.5621357, 0.9070122, -6.2253523)
 
 [node name="rock_planeA2" parent="." unique_id=460933434 instance=ExtResource("7_vqcyc")]
-transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, -10.191951, 1.1712866, -5.9381537)
+transform = Transform3D(2.26, 0, 0, 0, 2.26, 0, 0, 0, 2.26, -10.191951, 2.3357396, -5.9381537)
 
 [node name="hongoGigante2" parent="." unique_id=816862497 instance=ExtResource("3_thjlo")]
 transform = Transform3D(-0.002322562, 0, 4.3699994, 0, 4.37, 0, -4.3699994, 0, -0.002322562, -5.6803226, -0.37731552, -34.463955)
@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7012339, 0.53879905, 22.220
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.149, 0.11, -13.518)
 
 [node name="Character3D" parent="." unique_id=919686785 instance=ExtResource("12_j4qjx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.080557, 1.3792119, -18.876953)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2733498, 0.32862806, 31.65461)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=378235712]
 environment = SubResource("Environment_f5u5i")
@@ -91,45 +91,48 @@ shadow_enabled = true
 shadow_bias = 8.143
 shadow_opacity = 0.56
 
-[node name="LuciernagaP" parent="." unique_id=764468294 instance=ExtResource("13_h1rpi")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -15.6744, 2.2009735, -18.619446)
-
-[node name="LuciernagaP2" parent="." unique_id=907009119 instance=ExtResource("13_h1rpi")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -12.835165, 2.7345452, -15.42412)
-
-[node name="WaypointA" type="Marker3D" parent="." unique_id=1723459671 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.339487, 1.7904098, -15.628914)
-
-[node name="WaypointB" type="Marker3D" parent="." unique_id=236528061 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.278204, 2.6057925, -15.76439)
-
-[node name="WaypointD" type="Marker3D" parent="." unique_id=517313660 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.168171, 2.1782825, -19.20184)
-
-[node name="WaypointC" type="Marker3D" parent="." unique_id=1703028674 groups=["wander_points"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.313608, 2.1782825, -20.043995)
-
 [node name="QuestGiverArea" parent="." unique_id=248033050 instance=ExtResource("14_h1rpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.052254, 3.3527708, -64.2383)
 
-[node name="Zona" parent="." unique_id=739245093 instance=ExtResource("16_c1ajm")]
+[node name="ZonaHongos" parent="." unique_id=739245093 instance=ExtResource("16_c1ajm")]
 transform = Transform3D(0.118814185, 0, -0.9929165, 0, 1, 0, 0.9929165, 0, 0.118814185, -8.755787, 2.512065, -23.882624)
 zone_id = "Hongos"
 
-[node name="hongo" parent="Zona" unique_id=2146145943 instance=ExtResource("15_060oi")]
+[node name="hongo" parent="ZonaHongos" unique_id=2146145943 instance=ExtResource("15_060oi")]
 transform = Transform3D(0.118814185, 0, 0.9929165, 0, 1, 0, -0.9929165, 0, 0.118814185, -0.39247894, -1.0550733, 0.86857724)
 item_id = &"moonlit_mushroom"
 amount = 1
 
-[node name="hongo2" parent="Zona" unique_id=1455024775 instance=ExtResource("15_060oi")]
+[node name="hongo2" parent="ZonaHongos" unique_id=1455024775 instance=ExtResource("15_060oi")]
 transform = Transform3D(0.118814185, 0, 0.9929165, 0, 1, 0, -0.9929165, 0, 0.118814185, 0.35672188, -1.0550733, 3.3028898)
 item_id = &"moonlit_mushroom"
 amount = 1
 
-[node name="hongo3" parent="Zona" unique_id=1462157805 instance=ExtResource("15_060oi")]
-transform = Transform3D(0.118814185, 0, 0.9929165, 0, 1, 0, -0.9929165, 0, 0.118814185, -0.6662159, -1.4361367, -3.3243237)
+[node name="hongo3" parent="ZonaHongos" unique_id=1462157805 instance=ExtResource("15_060oi")]
+transform = Transform3D(0.118814185, 0, 0.9929165, 0, 1, 0, -0.9929165, 0, 0.118814185, -0.6662159, -1.00917, -3.324324)
 item_id = &"moonlit_mushroom"
 amount = 1
 
 [node name="PlantaMagica" parent="." unique_id=1854532972 instance=ExtResource("17_1jlvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8998723, 2.101068, -87.62219)
+
+[node name="ZonaLuciernagas" type="Node3D" parent="." unique_id=1194370392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -55.111496)
+
+[node name="LuciernagaP" parent="ZonaLuciernagas" unique_id=764468294 instance=ExtResource("13_h1rpi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.4172535, 6.4569554, -21.931564)
+
+[node name="LuciernagaP2" parent="ZonaLuciernagas" unique_id=907009119 instance=ExtResource("13_h1rpi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.7407131, 5.827962, -25.95047)
+
+[node name="WaypointA" type="Marker3D" parent="ZonaLuciernagas" unique_id=1723459671 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9958553, 4.8240814, -19.274002)
+
+[node name="WaypointB" type="Marker3D" parent="ZonaLuciernagas" unique_id=236528061 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6452675, 4.07042, -24.332703)
+
+[node name="WaypointD" type="Marker3D" parent="ZonaLuciernagas" unique_id=517313660 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098443985, 5.9292316, -26.34095)
+
+[node name="WaypointC" type="Marker3D" parent="ZonaLuciernagas" unique_id=1703028674 groups=["wander_points"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5677242, 4.158453, -28.564957)

@@ -101,6 +101,7 @@ func is_dialogue_from(source: Node) -> bool:
 	return active_dialogue != null and dialogue_source == source
 
 
+@warning_ignore("shadowed_variable_base_class")
 func show_prompt(owner: Node, text: String) -> void:
 	if owner == null or is_dialogue_active():
 		return
@@ -109,6 +110,7 @@ func show_prompt(owner: Node, text: String) -> void:
 	_ui.show_prompt(text)
 
 
+@warning_ignore("shadowed_variable_base_class")
 func hide_prompt(owner: Node) -> void:
 	if owner != _prompt_owner:
 		return
