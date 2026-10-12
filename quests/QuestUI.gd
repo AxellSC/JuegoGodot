@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 @onready var quest_container: Control = $QuestContainer
-@onready var title_label: Label = $QuestContainer/VBoxContainer/TitleLabel
-@onready var task_list_container: VBoxContainer = $QuestContainer/VBoxContainer/TaskListContainer
+@onready var title_label: Label = $QuestContainer/MarginContainer/VBoxContainer/TitleLabel
+@onready var task_list_container: VBoxContainer = $QuestContainer/MarginContainer/VBoxContainer/TaskListContainer
 @onready var animation_ques_container: AnimationPlayer = $QuestContainer/AnimationQuesContainer
 
 func _ready() -> void:
