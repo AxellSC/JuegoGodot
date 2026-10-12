@@ -9,6 +9,43 @@
 radius = 0.39794922
 height = 1.4525642
 
+[sub_resource type="Animation" id="Animation_vtuf5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bvwcm"]
+resource_name = "mission_completed"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 5),
+"transitions": PackedFloat32Array(1, 1.6817932),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kgb5w"]
+_data = {
+&"RESET": SubResource("Animation_vtuf5"),
+&"mission_completed": SubResource("Animation_bvwcm")
+}
+
 [node name="Character3D" type="CharacterBody3D" unique_id=919686785]
 collision_mask = 31
 script = ExtResource("1_ce57v")
@@ -41,16 +78,28 @@ one_shot = true
 script = ExtResource("4_vtuf5")
 
 [node name="QuestContainer" type="PanelContainer" parent="QuestCanvasLayer" unique_id=552987516]
-offset_right = 147.0
-offset_bottom = 99.0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 164.0
+offset_bottom = 116.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="QuestCanvasLayer/QuestContainer" unique_id=887272406]
+[node name="MarginContainer" type="MarginContainer" parent="QuestCanvasLayer/QuestContainer" unique_id=495637369]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestCanvasLayer/QuestContainer/MarginContainer" unique_id=887272406]
 layout_mode = 2
 
-[node name="TitleLabel" type="Label" parent="QuestCanvasLayer/QuestContainer/VBoxContainer" unique_id=2052035432]
+[node name="TitleLabel" type="Label" parent="QuestCanvasLayer/QuestContainer/MarginContainer/VBoxContainer" unique_id=2052035432]
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TaskListContainer" type="VBoxContainer" parent="QuestCanvasLayer/QuestContainer/VBoxContainer" unique_id=1842411433]
+[node name="TaskListContainer" type="VBoxContainer" parent="QuestCanvasLayer/QuestContainer/MarginContainer/VBoxContainer" unique_id=1842411433]
 layout_mode = 2
+
+[node name="AnimationQuesContainer" type="AnimationPlayer" parent="QuestCanvasLayer/QuestContainer" unique_id=122841015]
+libraries/ = SubResource("AnimationLibrary_kgb5w")

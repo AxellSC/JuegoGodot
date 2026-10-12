@@ -1,8 +1,9 @@
 extends CanvasLayer
 
 @onready var quest_container: Control = $QuestContainer
-@onready var title_label: Label = $QuestContainer/VBoxContainer/TitleLabel
-@onready var task_list_container: VBoxContainer = $QuestContainer/VBoxContainer/TaskListContainer
+@onready var title_label: Label = $QuestContainer/MarginContainer/VBoxContainer/TitleLabel
+@onready var task_list_container: VBoxContainer = $QuestContainer/MarginContainer/VBoxContainer/TaskListContainer
+@onready var animation_ques_container: AnimationPlayer = $QuestContainer/AnimationQuesContainer
 
 func _ready() -> void:
 	QuestManager.quest_started.connect(_on_quest_started)
@@ -19,6 +20,7 @@ func _on_quest_started(quest: QuestData) -> void:
 	_update_ui(quest)
 
 func _update_ui(quest: QuestData) -> void:
+	animation_ques_container.play("RESET")
 	title_label.text = quest.title
 	
 	# Limpiar labels de tareas anteriores
@@ -37,3 +39,6 @@ func _update_ui(quest: QuestData) -> void:
 func _on_quest_completed(quest: QuestData) -> void:
 	_update_ui(quest)
 	title_label.text = "[COMPLETADA] " + quest.title
+	animation_ques_container.play("mission_completed")
+	#quest_container.visible = false
+	

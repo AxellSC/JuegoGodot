@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://04c1vg2jk0af" path="res://scenes/levels/planta_magica.tscn" id="13_imbk5"]
 [ext_resource type="PackedScene" uid="uid://ckuebr0ah2prm" path="res://assets/3d/enviroment/rock_plane_c_2.tscn" id="13_y6mh5"]
 [ext_resource type="PackedScene" uid="uid://cwngnkndv7wln" path="res://inventory_ui.tscn" id="14_y6mh5"]
+[ext_resource type="PackedScene" uid="uid://ds25yovnnf46q" path="res://scenes/characters/mago_2.tscn" id="15_qs1yu"]
 [ext_resource type="PackedScene" uid="uid://fnporadmnxmo" path="res://assets/3d/enviroment/hongo_interactivo_a.tscn" id="16_cxga4"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b5l1p"]
@@ -36,7 +37,7 @@ ssr_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8342493, 0.07790387, -5.60938)
 
 [node name="Platform" parent="." unique_id=868075276 instance=ExtResource("2_pbtxe")]
-transform = Transform3D(1.4575365, 0, 0, 0, 1, 0, 0, 0, 6.0548596, -0.016551137, 0.14875317, 0.40336466)
+transform = Transform3D(2.5, 0, 0, 0, 1.715, 0, 0, 0, 10.383, -0.016551137, 0.14875317, 0.40336466)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2999567]
 environment = SubResource("Environment_36o1k")
@@ -48,27 +49,27 @@ transform = Transform3D(1, 0, 0, 0, 0.34667897, 0.9379839, 0, -0.9379839, 0.3466
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.434011, 0.4595948, 3.3698716)
 
 [node name="ItemPickup" parent="." unique_id=2146145943 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.045610547, 3.5063152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17333758, 0.21706975, 3.5063152)
 item_id = &"moonlit_mushroom"
 amount = 1
 
 [node name="ItemPickup5" parent="." unique_id=146867676 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86397076, 0.045610547, 3.5063152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86397076, 0.21682954, 3.5153341)
 item_id = &"moonlit_mushroom"
 amount = 1
 
 [node name="ItemPickup2" parent="." unique_id=1281077011 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, 0.47536147, 0.37896955, 6.136485)
+transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, 0.47536147, 0.55042875, 6.136485)
 item_id = &""
 amount = 1
 
 [node name="ItemPickup6" parent="." unique_id=1550766054 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, -0.28337693, 0.37896955, 8.567045)
+transform = Transform3D(0.9998367, 0, 0.018071074, 0, 1, 0, -0.018071074, 0, 0.9998367, -0.28337693, 0.55042875, 8.567045)
 item_id = &""
 amount = 1
 
 [node name="ItemPickup3" parent="." unique_id=891757011 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(0.99931645, 0.036814928, -0.0033490954, -0.036838174, 0.99929553, -0.007167135, 0.0030828703, 0.007285614, 0.9999687, -1.3369954, 0.31865764, 5.7636995)
+transform = Transform3D(0.99931645, 0.036814928, -0.0033490954, -0.036838174, 0.99929553, -0.007167135, 0.0030828703, 0.007285614, 0.9999687, -1.3369954, 0.49011683, 5.7636995)
 item_id = &""
 amount = 1
 
@@ -85,24 +86,24 @@ transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25
 transform = Transform3D(-1.7320508, 0, 1.0000001, 0, 2, 0, -1.0000001, 0, -1.7320508, -4.4651136, 0, -2.6033754)
 
 [node name="hongoInteractivoA" parent="." unique_id=200170276 instance=ExtResource("16_cxga4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -0.3337828, -10.204914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.41027534, -10.204914)
 
 [node name="hongoInteractivoA2" parent="." unique_id=714141905 instance=ExtResource("16_cxga4")]
-transform = Transform3D(-0.76535636, 0, 0.6436068, 0, 1, 0, -0.6436068, 0, -0.76535636, 1.6618133, -0.15696508, -13.306665)
+transform = Transform3D(-0.76535636, 0, 0.6436068, 0, 1, 0, -0.6436068, 0, -0.76535636, 1.6618133, 0.58709306, -13.306665)
 
 [node name="hongoInteractivoA3" parent="." unique_id=711636775 instance=ExtResource("16_cxga4")]
-transform = Transform3D(0.95470625, 0, -0.29755, 0, 1, 0, 0.29755, 0, 0.95470625, 0.8075414, -0.3064993, -11.701651)
+transform = Transform3D(0.95470625, 0, -0.29755, 0, 1, 0, 0.29755, 0, 0.95470625, 0.8075414, 0.43755883, -11.701651)
 
 [node name="ItemPickup4" parent="." unique_id=1258681714 instance=ExtResource("5_xo2fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.093817204, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28532216, 0)
 item_id = &"moonlit_mushroom"
 amount = 1
 
-[node name="QuestGiverArea" parent="." unique_id=248033050 instance=ExtResource("10_cungd")]
+[node name="Mago1" parent="." unique_id=248033050 instance=ExtResource("10_cungd")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9006956, 0.87865424, 0.67608213)
 
 [node name="Zona" parent="." unique_id=739245093 instance=ExtResource("11_g6moc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1578419, 1.184256, -11.730282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1578419, 1.184256, -34.97785)
 zone_id = "Hongos"
 
 [node name="Waypoint1" type="Marker3D" parent="." unique_id=1536346066 groups=["wander_points"]]
@@ -118,10 +119,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.054, 2.5921714)
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.43035257, 1.1470625, -1.6666169)
 
 [node name="luciernaga2" parent="." unique_id=1060439367 instance=ExtResource("12_1lh5u")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.3226186, 1.1470625, -0.5590154)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.3226186, 1.3185217, -0.5590154)
 
 [node name="luciernaga3" parent="." unique_id=1202447230 instance=ExtResource("12_1lh5u")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.884706, 1.1470625, 0.54874784)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.884706, 1.1468223, 0.55776674)
 
 [node name="PlantaMagica" parent="." unique_id=1854532972 instance=ExtResource("13_imbk5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -7.509)
@@ -139,3 +140,6 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.60780394, 0.59297025)
+
+[node name="Mago2" parent="." unique_id=1359051422 instance=ExtResource("15_qs1yu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2407866, 0.78680754, -19.688095)
