@@ -1,13 +1,12 @@
 extends Node3D
 
 @export var grow_duration: float = 2.0
-@export var grow_height: float = 2.0
 
 @onready var spell_zone: Area3D = $SpellZone
 @onready var plant_pivot: Node3D = $PlantPivot
 @onready var climb_zone: Area3D = $PlantPivot/ClimbZone
 @onready var planta_canvas: CanvasLayer = $plantaCanvas
-
+@onready var growth_target: Area3D = $GrowthTarget
 
 var has_grown: bool = false
 var is_player_in_zone: bool = false # Rastrear si el jugador está en la zona de hechizo
@@ -32,7 +31,7 @@ func _on_spell_zone_body_entered(body: Node3D) -> void:
 		if PowersManager.is_potion_unlocked("powerA"):
 			planta_canvas.visible = true
 		else:
-			print("No tienes el hechizo requerida")
+			print("No tienes el hechizo requerido")
 
 # Detectar cuando sale el jugador de la zona
 func _on_spell_zone_body_exited(body: Node3D) -> void:
@@ -51,8 +50,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func grow_plant() -> void:
 	has_grown = true
+	
+	# how much does it have to grow
+	var growth_distance = growth_target.global_position.y
+	print("the plant growth is set at: " , growth_distance)
 	var tween = create_tween()
-	tween.tween_property(plant_pivot, "scale:y", grow_height, grow_duration) \
+	
+	# it grows from the pivot to the target
+	tween.tween_property(plant_pivot, "scale:y", growth_distance, grow_duration) \
 		.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 
 # Funciones de la zona para escalar

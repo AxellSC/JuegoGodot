@@ -16,9 +16,10 @@ size = Vector3(1, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8vrlf"]
 size = Vector3(1.2, 3.2, 1.2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v5gy4"]
+
 [node name="PlantaMagica" type="Node3D" unique_id=1854532972]
 script = ExtResource("1_hnjnv")
-grow_height = 2.5
 
 [node name="SpellZone" type="Area3D" parent="." unique_id=1545876002]
 
@@ -64,6 +65,13 @@ theme_override_font_sizes/font_size = 18
 text = "[F]: Usar hechizo de crecimiento"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GrowthTarget" type="Area3D" parent="." unique_id=2140055734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrowthTarget" unique_id=193477119]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("BoxShape3D_v5gy4")
 
 [connection signal="body_entered" from="PlantPivot/ClimbZone" to="." method="_on_climb_zone_body_entered"]
 [connection signal="body_exited" from="PlantPivot/ClimbZone" to="." method="_on_climb_zone_body_exited"]
