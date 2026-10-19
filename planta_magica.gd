@@ -53,9 +53,7 @@ func grow_plant() -> void:
 	has_grown = true
 	
 	# how much does it have to grow
-	var growth_distance = growth_target.global_position.y - plant_pivot.global_position.y
-	print("target is at: " , growth_target.global_position.y)
-	print("growth distance is: " , growth_distance)
+	var growth_distance = growth_target.global_position.y
 	var tween = create_tween()
 	
 	# it grows from the pivot to the target
