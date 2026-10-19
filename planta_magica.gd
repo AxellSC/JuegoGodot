@@ -1,7 +1,6 @@
 extends Node3D
 
 @export var grow_duration: float = 2.0
-# @export var grow_height: float = 2.0
 
 @onready var spell_zone: Area3D = $SpellZone
 @onready var plant_pivot: Node3D = $PlantPivot
@@ -54,6 +53,7 @@ func grow_plant() -> void:
 	
 	# how much does it have to grow
 	var growth_distance = growth_target.global_position.y
+	print("the plant growth is set at: " , growth_distance)
 	var tween = create_tween()
 	
 	# it grows from the pivot to the target
